@@ -1,0 +1,26 @@
+/* Radius — primitive scale and per-component tokens (keyed to UI height). */
+:root{
+--Radius-Primitive-X0_5:2px;
+--Radius-Primitive-X1:4px;
+--Radius-Primitive-X1_5:6px;
+--Radius-Primitive-X2:8px;
+--Radius-Primitive-X2_5:10px; /* exception step, outside the standard scale; only where 10px is unavoidable */
+--Radius-Primitive-X3:12px;
+--Radius-Primitive-X4:16px;
+--Radius-Primitive-X5:20px;
+--Radius-Primitive-X6:24px;
+--Radius-Primitive-Full:9999px;
+
+--Radius-Button-XS:var(--Radius-Primitive-X2);
+--Radius-Button-S:var(--Radius-Primitive-X2);
+--Radius-Button-M:var(--Radius-Primitive-X2_5);
+--Radius-Button-L:var(--Radius-Primitive-X2_5);
+--Radius-Button-XL:var(--Radius-Primitive-X3);
+--Radius-Button-Round:var(--Radius-Primitive-Full);
+
+--Radius-Input-S:var(--Radius-Primitive-X2);
+--Radius-Input-M:var(--Radius-Primitive-X2_5);
+--Radius-Input-L:var(--Radius-Primitive-X2_5);
+--Radius-Input-XL:var(--Radius-Primitive-X3);
+--Radius-Input-Textarea:var(--Radius-Primitive-X3);
+}

@@ -1,0 +1,35 @@
+/* Spacing — primitive scale (2px base) and alias tokens.
+   Note: the source spec lists the 10px step as --Spacing-Primitive-_X2_5 (leading underscore);
+   it is normalised here to --Spacing-Primitive-X2_5 to match the radius scale. */
+:root{
+--Spacing-Primitive-X0_5:2px;
+--Spacing-Primitive-X1:4px;
+--Spacing-Primitive-X1_5:6px;
+--Spacing-Primitive-X2:8px;
+--Spacing-Primitive-X2_5:10px;
+--Spacing-Primitive-X3:12px;
+--Spacing-Primitive-X4:16px;
+--Spacing-Primitive-X5:20px;
+--Spacing-Primitive-X6:24px;
+--Spacing-Primitive-X7:28px;
+--Spacing-Primitive-X8:32px;
+--Spacing-Primitive-X9:36px;
+--Spacing-Primitive-X10:40px;
+--Spacing-Primitive-X12:48px;
+--Spacing-Primitive-X13:52px;
+--Spacing-Primitive-X14:56px;
+--Spacing-Primitive-X16:64px;
+
+--Spacing-Offset-Header-Mobile:102px;
+--Spacing-Offset-Header-Mobile_with_banner:142px;
+--Spacing-Offset-Header-PC:108px;
+--Spacing-Offset-Header-PC_with_banner:148px;
+--Spacing-Offset-Bottom-Button_group:64px;
+
+--Spacing-Global_gutter-Mobile:var(--Spacing-Primitive-X5);
+--Spacing-Global_gutter-PC:var(--Spacing-Primitive-X5);
+
+--Spacing-X_Gap-Chip:var(--Spacing-Primitive-X2);
+--Spacing-X_Gap-UI_Maximum28H:var(--Spacing-Primitive-X1);
+--Spacing-X_Gap-UI_over28H:var(--Spacing-Primitive-X2);
+}

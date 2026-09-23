@@ -1,0 +1,27 @@
+/* Typography — Pretendard only. Scale below is the landing-page guide (1920px 기준);
+   UI sizes follow the component heights defined in the radius/spacing specs. */
+:root{
+--Font-Weight-Regular:400;
+--Font-Weight-Medium:500;
+--Font-Weight-SemiBold:600;
+--Font-Weight-Bold:700;
+
+--Font-Size-Main_title:40px;
+--Font-Size-Sub_title:24px;
+--Font-Size-Body-L:18px;
+--Font-Size-Body-M:16px;
+--Font-Size-Body-S:14px;
+--Font-Size-Label:13px;
+--Font-Size-Caption:12px;
+
+--Line-Height-Tight:1.3;
+--Line-Height-Normal:1.5;
+--Line-Height-Loose:1.6;
+
+--Type-Main_title:var(--Font-Weight-Bold) var(--Font-Size-Main_title)/var(--Line-Height-Tight) var(--Font-Family-Base);
+--Type-Sub_title:var(--Font-Weight-Medium) var(--Font-Size-Sub_title)/var(--Line-Height-Normal) var(--Font-Family-Base);
+--Type-Body-L:var(--Font-Weight-Regular) var(--Font-Size-Body-L)/var(--Line-Height-Loose) var(--Font-Family-Base);
+--Type-Body-M:var(--Font-Weight-Regular) var(--Font-Size-Body-M)/var(--Line-Height-Loose) var(--Font-Family-Base);
+--Type-Body-S:var(--Font-Weight-Regular) var(--Font-Size-Body-S)/var(--Line-Height-Normal) var(--Font-Family-Base);
+--Type-Caption:var(--Font-Weight-Regular) var(--Font-Size-Caption)/var(--Line-Height-Normal) var(--Font-Family-Base);
+}

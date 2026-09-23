@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/colors-primitive.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/colors-bg.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/colors-fg.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/colors-border.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/radius.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/typography.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/tokens/layout.css">
+<link rel="stylesheet" href="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/styles.css">
+<script src="_ds/b2c-design-system-f744f0ef-2858-449a-8c68-bc21789c9073/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&amp;display=swap">
+<style>
+  *{box-sizing:border-box}
+  @keyframes ajd-spectrum{to{transform:rotate(360deg)}}
+  @keyframes ajd-sweep{from{background-position:100% 0}to{background-position:0 0}}
+  .hm-ch{display:inline-block;opacity:0;color:#c3c8d0;filter:blur(10px);transform:translateY(.12em)}
+  .is-play .hm-ch{animation:hm-ink .75s cubic-bezier(.2,.7,.2,1) forwards,hm-pass .9s cubic-bezier(.65,0,.35,1) forwards;animation-delay:calc(var(--i) * 45ms),calc(900ms + var(--i) * 40ms)}
+  @keyframes hm-ink{
+    0%{opacity:0;filter:blur(10px);transform:translateY(.12em);color:#c3c8d0}
+    55%{opacity:1;filter:blur(0);transform:none;color:#c3c8d0}
+    100%{opacity:1;filter:blur(0);transform:none;color:#000}
+  }
+  @keyframes hm-pass{
+    0%{color:#000}
+    22%{color:#15223f}
+    42%{color:#3a6ff0}
+    60%{color:#9dbcff}
+    78%{color:#3a6ff0}
+    100%{color:#000}
+  }
+  .hm-ch.hm-keep{color:inherit}
+  .is-play .hm-ch.hm-keep{animation:hm-plain .75s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i) * 45ms)}
+  @keyframes hm-plain{
+    0%{opacity:0;filter:blur(10px);transform:translateY(.12em)}
+    100%{opacity:1;filter:blur(0);transform:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hm-ch{opacity:1;filter:none;transform:none;color:#000}
+    .hm-ch.hm-keep{color:inherit}
+    .is-play .hm-ch{animation:none !important}
+  }
+  @keyframes v3-chev{0%,100%{transform:translateY(-3px);opacity:.6}50%{transform:translateY(4px);opacity:1}}
+  .sr{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .sr.sr-in{opacity:1;transform:none}
+  .sr-line{opacity:1;transform:scaleY(0);transform-origin:top center;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .sr-line.sr-in{transform:scaleY(1)}
+  @media (prefers-reduced-motion: reduce){.sr{opacity:1;transform:none;transition:none}.sr-line{transform:none;transition:none}}
+  @keyframes v3-review-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.ajd-spectrum{animation:none !important}}
+  html{overflow-x:clip}
+  body{margin:0;background:var(--Color-GrayScale-050);font-family:var(--Font-Family-Base);overflow-x:clip}
+  a{color:var(--Color-Primary-600);text-decoration:none}
+  a:hover{color:var(--Color-Primary-700)}
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail" data-bg-color="#145CE6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#145CE6"></rect>
+    <rect x="360" y="300" width="480" height="150" rx="24" fill="#ffffff"></rect>
+    <text x="600" y="398" text-anchor="middle" font-family="sans-serif" font-size="88" font-weight="700" fill="#145CE6">아정당 상조</text>
+  </svg>
+</template>
+
+<div style="background:var(--Color-GrayScale-White);font-family:var(--Font-Family-Base);color:var(--Color-Fg-Primary);width:100%;margin:0 auto;container-type:inline-size;max-width:{{ shellMaxWidth }};box-shadow:{{ shellShadow }}">
+
+<div style="position:sticky;top:0;z-index:100;background:#fff">
+  <div style="position:relative;width:100%;overflow:hidden;height:{{ bandHeight }}">
+    <div style="display:flex;flex-direction:column;transition:transform 560ms cubic-bezier(0.5,0.05,0.2,1);transform:{{ bandTransform }}">
+      <a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;background:#0B0B0C;font-size:14px;font-weight:700;color:#fff;letter-spacing:-0.02em">
+        <svg viewBox="0 0 24 24" fill="#fff" style="width:15px;height:15px" aria-hidden="true"><path d="M16.4 12.7c0-2 1.6-2.9 1.7-3-0.9-1.3-2.4-1.5-2.9-1.5-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7.9 1.4 2 2.5 1.9 1-.04 1.4-.6 2.6-.6 1.2 0 1.5.6 2.6.6 1.1 0 1.7-.9 2.4-1.9.5-.7.8-1.4 1.1-2.2-1.5-.6-2.6-2-2.6-3.6Zm-2-6.6c.6-.7 1-1.6.9-2.6-.8 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5.9.1 1.8-.5 2.5-1.2Z"></path></svg>
+        아이폰 18 사전예약 얼리버드 알림신청
+      </a>
+      <a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;background:#5B8EF1;font-size:14px;font-weight:700;color:#fff;letter-spacing:-0.02em">
+        <svg viewBox="0 0 24 24" fill="none" style="width:17px;height:17px" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="#FFD84D"></circle><path d="M12 7v5l3 2" stroke="#5B8EF1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        3초 안내후 최대 지원금 128만 원 받기
+      </a>
+      <a href="#" style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;background:#3FB6AD;font-size:14px;font-weight:700;color:#fff;letter-spacing:-0.02em">
+        <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px" aria-hidden="true"><rect x="5" y="4" width="12" height="16" rx="1.5" fill="#fff"></rect><path d="M8 8h6M8 11h6M8 14h4" stroke="#3FB6AD" stroke-width="1.4" stroke-linecap="round"></path></svg>
+        아정당에서 신청하면 최대지원금 152만 원
+      </a>
+    </div>
+    <button onClick="{{ closeBand }}" aria-label="닫기" style="position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:2;display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:0;background:transparent;cursor:pointer;padding:0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" style="width:15px;height:15px"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </button>
+  </div>
+  <header style="width:100%;border-bottom:1px solid #ECF0F4">
+    <div style="width:100%;max-width:1048px;margin:0 auto;padding:12px;display:flex;align-items:center;gap:24px">
+      <a href="#" style="display:flex;align-items:center;gap:6px;flex:0 0 auto">
+        <img src="assets/logo.png" alt="아정당" style="height:28px;width:auto;object-fit:contain">
+        <span style="font-size:20px;font-weight:800;color:#145CE6;letter-spacing:-0.03em">아정당</span>
+      </a>
+      <nav style="display:{{ topLinksDisplay }};align-items:center;gap:22px;flex:1 1 auto;flex-wrap:wrap;min-width:0">
+        <a href="#" style="font-size:13px;font-weight:500;color:#575E64">질문/답변</a>
+        <a href="#" style="font-size:13px;font-weight:500;color:#575E64">꿀팁게시판</a>
+        <a href="#" style="font-size:13px;font-weight:500;color:#575E64">후기</a>
+        <a href="#" style="font-size:13px;font-weight:500;color:#575E64">이벤트</a>
+        <a href="#" style="font-size:13px;font-weight:500;color:#575E64">불편접수</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:14px;flex:0 0 auto;margin-left:auto">
+        <button aria-label="알림" style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:0;background:transparent;cursor:pointer;padding:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8C939A" stroke-width="1.8" stroke-linecap="round" style="width:19px;height:19px"><path d="M18 15.5V11a6 6 0 1 0-12 0v4.5L4.5 18h15Z"></path><path d="M10 20.5a2.2 2.2 0 0 0 4 0"></path></svg>
+        </button>
+        <a href="#" style="font-size:13px;font-weight:600;color:#575E64;border:1px solid #DEE2E6;border-radius:8px;padding:7px 12px">로그인/회원가입</a>
+      </div>
+    </div>
+  </header>
+  <nav style="width:100%;border-bottom:1px solid #ECF0F4">
+    <div style="width:100%;max-width:1048px;margin:0 auto;padding:14px 12px;display:flex;align-items:center;gap:22px">
+      <div style="display:flex;align-items:center;gap:22px;flex:1 1 auto;min-width:0;flex-wrap:nowrap;overflow-x:auto;padding-top:18px;margin-top:-18px;padding-bottom:2px">
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">인터넷</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">가전렌탈</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">휴대폰</a>
+        <a href="#" style="position:relative;flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">카드<span style="position:absolute;top:-2px;right:-7px;width:5px;height:5px;border-radius:50%;background:#f2513c"></span></a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">이사</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">청소</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">부동산</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">인테리어</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#145CE6;letter-spacing:-0.02em;border-bottom:2px solid #145CE6;padding-bottom:2px">상조</a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">보험</a>
+        <a href="#" style="position:relative;flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">매장패키지<span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;color:#e06fa8;white-space:nowrap">사업자</span></a>
+        <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:16px;font-weight:700;color:#1F2429;letter-spacing:-0.02em">쇼핑적립</a>
+        <sc-if value="{{ isMobileView }}" hint-placeholder-val="{{ false }}">
+          <span style="flex:0 0 auto;width:1px;height:14px;background:#DEE2E6;margin:0 2px"></span>
+          <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:14px;font-weight:500;color:#575E64">질문/답변</a>
+          <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:14px;font-weight:500;color:#575E64">꿀팁게시판</a>
+          <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:14px;font-weight:500;color:#575E64">후기</a>
+          <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:14px;font-weight:500;color:#575E64">이벤트</a>
+          <a href="#" style="flex:0 0 auto;white-space:nowrap;font-size:14px;font-weight:500;color:#575E64">불편접수</a>
+        </sc-if>
+      </div>
+      <button aria-label="전체 메뉴" style="flex:0 0 auto;display:flex;flex-direction:column;gap:4px;border:0;background:transparent;cursor:pointer;padding:4px">
+        <span style="display:block;width:22px;height:2px;background:#1F2429;border-radius:2px"></span>
+        <span style="display:block;width:22px;height:2px;background:#1F2429;border-radius:2px"></span>
+        <span style="display:block;width:22px;height:2px;background:#1F2429;border-radius:2px"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<div style="max-width:1056px;margin:0 auto;padding:0 16px 132px">
+
+  <section style="position:relative;border-radius:20px;overflow:hidden;margin:12px 0 0;width:100%;aspect-ratio:2.8/1;background:#080f24">
+    <video ref="{{ videoRef }}" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,15,36,.75) 0%,rgba(8,15,36,.35) 50%,rgba(8,15,36,.1) 100%)"></div>
+    <img src="assets/hero-logo.png" alt="아정당 상조" style="position:absolute;left:5%;top:9%;z-index:2;height:clamp(14px,3.6cqi,24px);width:auto;object-fit:contain">
+    <div style="position:absolute;inset:0;display:{{ heroCtaDisplay }};flex-direction:column;justify-content:flex-end;padding:16px 16px 20px;color:#fff">
+      <div style="display:inline-flex;align-items:stretch;flex-direction:column;gap:clamp(6px,1.2cqi,10px);width:min(34cqi,268px)">
+        <a href="#apply" style="position:relative;display:flex;align-items:center;padding:clamp(9px,1.5cqi,14px) clamp(30px,4.4cqi,42px) clamp(9px,1.5cqi,14px) clamp(12px,1.9cqi,18px);border-radius:clamp(10px,1.5cqi,14px);text-decoration:none;color:#fff;white-space:nowrap;background:linear-gradient(145deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.04) 55%,rgba(255,255,255,.09) 100%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 4px 14px rgba(0,0,0,.12);-webkit-backdrop-filter:blur(8px) saturate(180%);backdrop-filter:blur(8px) saturate(180%)">
+          <span style="font: var(--Font-Weight-Bold) clamp(10px,1.55cqi,14px)/1.35 var(--Font-Family-Base); letter-spacing: -0.03em; white-space: nowrap; font-weight: 500">100만 원 현금 사은품 받기</span>
+          <span style="position:absolute;top:50%;right:16px;margin-top:-8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.92)">
+            <svg viewBox="0 0 14 14" fill="none" style="width:14px;height:16px"><path d="M5 2.5l4.5 4.5L5 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </a>
+        <a href="#apply" style="position:relative;display:flex;align-items:center;padding:clamp(9px,1.5cqi,14px) clamp(30px,4.4cqi,42px) clamp(9px,1.5cqi,14px) clamp(12px,1.9cqi,18px);border-radius:clamp(10px,1.5cqi,14px);text-decoration:none;color:#fff;white-space:nowrap;background:linear-gradient(145deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.04) 55%,rgba(255,255,255,.09) 100%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 4px 14px rgba(0,0,0,.12);-webkit-backdrop-filter:blur(8px) saturate(180%);backdrop-filter:blur(8px) saturate(180%)">
+          <span style="font: var(--Font-Weight-Bold) clamp(10px,1.55cqi,14px)/1.35 var(--Font-Family-Base); letter-spacing: -0.03em; white-space: nowrap; font-weight: 500">15만 원 상당 노화 방지 화장품 받기</span>
+          <span style="position:absolute;top:50%;right:16px;margin-top:-8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.92)">
+            <svg viewBox="0 0 14 14" fill="none" style="width:14px;height:16px"><path d="M5 2.5l4.5 4.5L5 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:clamp(32px,7cqi,80px) 24px 0;text-align:center">
+    <span style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;width:72px;padding:12px 0 18px;background:var(--Color-Primary-600);color:var(--Color-GrayScale-White);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)">
+      <span style="font:var(--Font-Weight-Medium) 11px/1.3 var(--Font-Family-Base);letter-spacing:-0.02em">기간한정</span>
+      <span style="font:var(--Font-Weight-Bold) 15px/1.2 var(--Font-Family-Base);letter-spacing:0.02em">EVENT</span>
+    </span>
+    <h2 style="margin:8px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty"><span style="color:var(--Color-Primary-600)">원하시는 혜택</span>을 고르세요</h2>
+    <p style="margin:0;font:var(--Font-Weight-Regular) clamp(12px,2.2cqi,14px)/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">재고 소진 시 조기 마감됩니다</p>
+  </section>
+
+  <div style="display:none">
+    <div>
+      <button onClick="{{ selectCombo }}">결합상조</button>
+      <button onClick="{{ selectPure }}">순수상조</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:stretch;justify-content:center;max-width:760px;margin:0 auto;padding:clamp(20px,3cqi,32px) 24px 0">
+
+  <section style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 16px 22px;border:1px solid var(--Color-Border-Secondary);border-radius:20px;background:var(--Color-GrayScale-White);text-align:center">
+    <div data-hm-skip="1" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;width:100%;min-height:{{ cardHeadMinH }}">
+      <span style="font:var(--Font-Weight-Medium) clamp(15px,2.6cqi,18px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">최신 인기 가전제품</span>
+      <span style="display:flex;align-items:center;gap:12px;width:100%">
+        <span style="flex:1 1 0;height:1px;background:linear-gradient(90deg,rgba(222,226,230,0) 0%,var(--Color-Border-Secondary) 100%)"></span>
+        <span style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9999px;background:var(--Color-GrayScale-050);color:var(--Color-Fg-Tertiary);font:var(--Font-Weight-Bold) 15px/1 var(--Font-Family-Base)">+</span>
+        <span style="flex:1 1 0;height:1px;background:linear-gradient(90deg,var(--Color-Border-Secondary) 0%,rgba(222,226,230,0) 100%)"></span>
+      </span>
+      <span style="font:var(--Font-Weight-Bold) clamp(20px,3.6cqi,26px)/1.3 var(--Font-Family-Base);letter-spacing:-0.03em;color:var(--Color-Primary-600);word-break:keep-all">최대 100만 원</span>
+    </div>
+
+    <img src="assets/combo-appliances-v3.png" alt="가전 결합 제품" style="display:block;width:100%;max-width:200px;height:{{ cardImgH }};object-fit:contain;margin:4px auto 0">
+    <p style="margin:0;font:var(--Font-Weight-Medium) 15px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">월 9,900원~</p>
+    <div style="width:100%;padding:14px 12px;border-radius:12px;background:var(--Color-GrayScale-050)">
+      <p style="margin:0;font:var(--Font-Weight-Bold) 14px/1.5 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">국내 <span style="color:var(--Color-Primary-600)">전 브랜드 인기 가전</span> 중 선택</p>
+      <p style="margin:6px 0 0;font:var(--Font-Weight-Regular) 13px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">다이슨 · LG · 삼성 · 쿠쿠 · 청호나이스 등</p>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;margin-top:auto;padding-top:8px">
+      <x-import component-from-global-scope="B2CDesignSystem_f744f0.Button" size="L" dc-props="{{ cardBtnProps }}" hint-size="100%,48px">지금 신청하기</x-import>
+      <x-import component-from-global-scope="B2CDesignSystem_f744f0.Button" size="L" variant="outline" dc-props="{{ cardBtnProps }}" hint-size="100%,48px">혜택 확인하기</x-import>
+    </div>
+    
+  </section>
+
+  <section style="display:none">
+    
+    <h2 data-hm-skip="1" style="margin:20px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">즉시 이용 가능한<br>인기 가전제품</h2>
+    
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:32px">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="6">
+        <x-import component-from-global-scope="B2CDesignSystem_f744f0.Chip" dc-props="{{ c.props }}" hint-size="auto,40px">{{ c.label }}</x-import>
+      </sc-for>
+    </div>
+
+    <div style="background:var(--Color-GrayScale-050);border:1px solid var(--Color-Border-Secondary);border-radius:20px;padding:24px;margin-top:28px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+        <sc-for list="{{ prods }}" as="p" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;text-align:left">
+            <div style="position:relative;aspect-ratio:4/5;border-radius:12px;background:var(--Color-GrayScale-White);overflow:hidden">
+              <div role="img" style="position:absolute;inset:0;background-repeat:no-repeat;background-position:center;background-size:78% auto;background-image:url({{ p.img }})"></div>
+              <div style="position:absolute;left:12px;top:12px;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:9999px;background:var(--Color-Primary-600);color:var(--Color-Fg-Primary);font:var(--Font-Weight-Bold) 14px/1 var(--Font-Family-Base)">{{ p.rank }}</div>
+            </div>
+            <div style="margin-top:16px;min-height:46px;font:var(--Font-Weight-Medium) 15px/1.55 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary);word-break:keep-all">{{ p.name }}</div>
+            <div style="margin-top:14px;display:flex;align-items:center;justify-content:space-between;font:var(--Font-Weight-Regular) 13px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">
+              <span>월납입금</span>
+              <span style="text-decoration:line-through">{{ p.price }}</span>
+            </div>
+            <div style="margin-top:6px;display:flex;align-items:center;justify-content:space-between">
+              <span style="font:var(--Font-Weight-Medium) 13px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">카드 제휴가</span>
+              <span style="font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.2 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Primary-600)">{{ p.cardPrice }}</span>
+            </div>
+            <a href="{{ p.link }}" target="_blank" rel="noopener" style="display:block;margin-top:auto;padding-top:12px;text-align:center;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Primary-600);color:var(--Color-Primary-600);font:var(--Font-Weight-Bold) 14px/1 var(--Font-Family-Base);padding:13px 0;border-radius:10px" style-hover="background:var(--Color-Primary-050)">바로가기 ›</a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:24px">
+      <x-import component-from-global-scope="B2CDesignSystem_f744f0.Button" size="L" variant="outline" hint-size="auto,48px">더 많은 상품 보러가기</x-import>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 16px 22px;border:1px solid var(--Color-Border-Secondary);border-radius:20px;background:var(--Color-GrayScale-White);text-align:center">
+    
+    
+    <div data-hm-skip="1" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;width:100%;min-height:{{ cardHeadMinH }}">
+      <span style="font:var(--Font-Weight-Medium) clamp(15px,2.6cqi,18px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">15만원 상당 노화방지 화장품</span>
+      <span style="display:flex;align-items:center;gap:12px;width:100%">
+        <span style="flex:1 1 0;height:1px;background:linear-gradient(90deg,rgba(222,226,230,0) 0%,var(--Color-Border-Secondary) 100%)"></span>
+        <span style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9999px;background:var(--Color-GrayScale-050);color:var(--Color-Fg-Tertiary);font:var(--Font-Weight-Bold) 15px/1 var(--Font-Family-Base)">+</span>
+        <span style="flex:1 1 0;height:1px;background:linear-gradient(90deg,var(--Color-Border-Secondary) 0%,rgba(222,226,230,0) 100%)"></span>
+      </span>
+      <span style="font:var(--Font-Weight-Bold) clamp(20px,3.6cqi,26px)/1.3 var(--Font-Family-Base);letter-spacing:-0.03em;color:var(--Color-Primary-600);word-break:keep-all">최대 50만 원</span>
+      <span style="font:var(--Font-Weight-Regular) 12px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">*장례 위로금</span>
+    </div>
+    <img src="assets/pure-cosmetics.png" alt="화장품 세트" style="display:block;width:100%;max-width:200px;height:{{ cardImgH }};object-fit:contain;margin:4px auto 0">
+    <p style="margin:0;font:var(--Font-Weight-Medium) 15px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">월 100원~</p>
+    <div style="width:100%;padding:14px 12px;border-radius:12px;background:var(--Color-GrayScale-050)">
+      <p style="margin:0;font:var(--Font-Weight-Bold) 14px/1.5 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">하버드 최대 연구진이 발견한 <span style="color:var(--Color-Primary-600)">세놀리틱</span></p>
+      <p style="margin:6px 0 0;font:var(--Font-Weight-Regular) 13px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">노화세포 제거 성분 함유 · DAY&amp;NIGHT 루틴 세트</p>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;margin-top:auto;padding-top:8px">
+      <x-import component-from-global-scope="B2CDesignSystem_f744f0.Button" size="L" dc-props="{{ cardBtnProps }}" hint-size="100%,48px">지금 신청하기</x-import>
+      <x-import component-from-global-scope="B2CDesignSystem_f744f0.Button" size="L" variant="outline" dc-props="{{ cardBtnProps }}" hint-size="100%,48px">혜택 확인하기</x-import>
+    </div>
+
+  </section>
+
+  </div>
+
+  <p style="max-width:760px;margin:12px auto 0;padding:0 24px;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);text-align:right">*자세한 가입 조건은 상담 시 안내해 드립니다.</p>
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <div style="width:100%;text-align:center">
+      <img src="assets/refund-cycle.png" alt="" style="display:block;width:120px;height:auto;margin:0 auto 16px">
+      <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty">마음이 바뀌면,<br>언제든지 해지 가능합니다</h3>
+      <img src="assets/refund-terms.png" alt="제14조 계약의 해지 및 해약환급금 약관" style="display:block;width:100%;max-width:640px;height:auto;margin:28px auto 0;border-radius:14px"><p style="max-width:640px;margin:10px auto 0;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);text-align:right">*아정당 상조 계약서</p><p style="margin:16px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">내신 금액 전액 <strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">100% 환급</strong>까지 해드려요</p>
+      
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;max-width:440px;margin:56px auto 0">
+      <svg width="30" height="20" viewBox="0 0 30 20" fill="none" aria-hidden="true" style="animation:v3-chev 1.6s ease-in-out infinite">
+        <path d="M3 2l12 8 12-8" stroke="var(--Color-Primary-600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M3 10l12 8 12-8" stroke="var(--Color-Primary-600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <a href="#apply" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border-radius: 12px; background: var(--Color-Primary-600); color: var(--Color-GrayScale-White); font: var(--Font-Weight-Bold) 17px/1 var(--Font-Family-Base); letter-spacing: -0.02em">내 혜택 보러가기</a>
+      <p style="margin: 12px 0 0; font: var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); margin-top: 0px">*아정99 플랜은 중도 해지 시 위약금이 발생합니다<br>*가전 렌탈 중도 해지 시 위약금이 발생합니다</p>
+    </div>
+  </section>
+
+  
+
+
+  <section id="v3-why-section" style="margin:0 {{ bleedX }} 0;width:{{ bleedW }};padding:clamp(48px,11cqi,140px) {{ bleedPad }} 0;background:var(--Color-GrayScale-White);text-align:center">
+    
+    <span style="display:inline-block;margin:0 0 16px;font-family:'Nanum Pen Script','NanumHandLetter',cursive;font-size:44px;line-height:1.3;color:var(--Color-Primary-600);letter-spacing:0">“ 왜 이렇게까지 하냐고요? ”</span>
+    
+    
+    <p style="margin: 0; font: var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); font-size: clamp(19px,4cqi,26px); font-weight: 700; margin-top: 54px">슬픔을 이용하는 장례 시장,</p>
+    <h2 data-hm-skip="1" style="margin: 12px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); margin-top: 0px; font-size: 32px">아정당이 바꾸기로 했습니다</h2>
+    <div style="position:relative;max-width:520px;margin:28px auto 0;border-radius:20px;overflow:hidden">
+      <img src="assets/ceo-portrait.png" alt="아정당 상조 오병선 대표" style="display:block;width:100%;height:auto">
+      <div style="position:absolute;right:16px;bottom:16px;padding:12px 18px;border-radius:12px;background:rgba(15,18,22,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-align:right">
+        <span style="display:block;font:var(--Font-Weight-Medium) 12px/1.4 var(--Font-Family-Base);color:rgba(255,255,255,.8)">아정당 상조</span>
+        <span style="display:block;margin-top:2px;font:var(--Font-Weight-Bold) 18px/1.3 var(--Font-Family-Base);letter-spacing:-0.02em;color:#fff">오병선 대표</span>
+      </div>
+    </div>
+    <p style="margin: 48px 0 0; font: var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); text-wrap: pretty">선물을 드리면서까지 이 얘기를 꺼내는 건,<br>저희가 자신 있기 때문입니다</p>
+    
+  </section>
+
+  <section style="margin:0 {{ bleedX }};width:{{ bleedW }};padding:0 {{ bleedPad }} 0;background:var(--Color-GrayScale-White);text-align:center">
+    <div class="sr-line" style="width: 2px; height: clamp(90px,24cqi,240px); background: linear-gradient(180deg,#0F0C08EB,#0F0C0800); margin: 24px auto clamp(48px,11cqi,140px)"></div>
+    
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+      <span style="font:var(--Font-Weight-Bold) clamp(18px,3.4cqi,22px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-GrayScale-900)">아정당 상조는</span>
+      <span style="width:100%;max-width:150px;height:2px;background:var(--Color-GrayScale-900)"></span>
+    </div>
+    <h3 data-hm-skip="1" style="margin: 28px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; color: var(--Color-Fg-Primary)">119만 원으로 장례가 가능합니다</h3>
+    <p style="margin:24px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">전국 무빈소 가능 장례식장을 미리 확인하고,<br>필요한 순간 바로 연결해드립니다</p>
+    <div style="max-width:520px;margin:48px auto 0">
+      <img src="assets/price-compare-v2.png" alt="기존 상조 1,500만 원 대비 아정당 상조 119만 원" style="display:block;width:100%;height:auto;border-radius:16px">
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px">
+        <div>
+          <p style="margin:0;font:var(--Font-Weight-Bold) clamp(15px,2.6cqi,19px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">기존 상조</p>
+        </div>
+        <div>
+          <p style="margin:0;font:var(--Font-Weight-Bold) clamp(15px,2.6cqi,19px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">아정당 상조</p>
+          <p style="margin:6px 0 0;font:var(--Font-Weight-Regular) clamp(12px,2cqi,14px)/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">무빈소 장례</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 data-hm-skip="1" style="margin:clamp(56px,9cqi,100px) 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">허례허식 없이,<br><span style="color:var(--Color-Primary-600)">장례 필수 항목만 담았어요</span></h3>
+    <div style="display:grid;grid-template-columns:{{ essentialCols }};gap:clamp(8px,1.4cqi,12px);max-width:760px;margin:36px auto 0">
+      <sc-for list="{{ essentials }}" as="e" hint-placeholder-count="12">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--Color-GrayScale-050);border:1px solid var(--Color-Border-Secondary);border-radius:18px;padding:16px 10px">
+          <div role="img" style="width:clamp(38px,6cqi,56px);height:clamp(38px,6cqi,56px);background-repeat:no-repeat;background-position:center;background-size:contain;background-image:url({{ e.img }})"></div>
+          <span style="font:var(--Font-Weight-Medium) clamp(11px,1.7cqi,14px)/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all;text-align:center">{{ e.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <h3 data-hm-skip="1" style="margin:clamp(64px,10cqi,120px) 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">싸다고&nbsp;품질이 떨어지지 않습니다</h3>
+    <p style="margin:18px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.7 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">거품은 걷어내되, 마지막 가시는 길의 격(格)은<br>최고 수준 그대로 지켜드립니다</p>
+    <img src="assets/awards.png" alt="대한민국 고객만족지수 1위 수상 이력" style="display:block;width:100%;max-width:520px;height:auto;margin:36px auto 0">
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(24px,5cqi,56px);max-width:520px;margin:28px auto 0;padding:22px 24px;border-radius:16px;background:var(--Color-GrayScale-050)">
+      <div style="flex:1 1 0">
+        <p style="margin:0;font:var(--Font-Weight-Bold) clamp(16px,2.8cqi,20px)/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Primary);letter-spacing:-0.02em">대통령장</p>
+        <p style="margin:6px 0 0;font:var(--Font-Weight-Regular) clamp(12px,2.1cqi,14px)/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">진행 경력 보유</p>
+      </div>
+      <span style="width:1px;align-self:stretch;background:var(--Color-Border-Secondary)"></span>
+      <div style="flex:1 1 0">
+        <p style="margin:0;font:var(--Font-Weight-Bold) clamp(16px,2.8cqi,20px)/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Primary);letter-spacing:-0.02em">5년 연속</p>
+        <p style="margin:6px 0 0;font:var(--Font-Weight-Regular) clamp(12px,2.1cqi,14px)/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">고객만족지수 1위</p>
+      </div>
+    </div>
+
+    
+    <h3 data-hm-skip="1" style="margin:clamp(64px,10cqi,120px) 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">대통령 국가장 경력팀이<br>직접 진행합니다</h3><div style="max-width:520px;margin:32px auto 0">
+      <div style="position:relative;border-radius:20px;overflow:hidden">
+        <img src="assets/director-photo.png" alt="김인식 총괄 장례지도사" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;background:linear-gradient(to top,rgba(10,13,18,.82) 0%,rgba(10,13,18,.5) 60%,rgba(10,13,18,0) 100%);text-align:left">
+          <div>
+            <span style="display:inline-block;background:rgba(255,255,255,.18);color:#fff;font:var(--Font-Weight-Medium) 12px/1.4 var(--Font-Family-Base);padding:4px 10px;border-radius:6px">아정당 상조</span>
+            <p style="margin:8px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.3 var(--Font-Family-Base);color:#fff;letter-spacing:-0.02em">김인식 총괄</p>
+          </div>
+          <div style="text-align:right;font:var(--Font-Weight-Regular) 13px/1.7 var(--Font-Family-Base);color:rgba(255,255,255,.88);white-space:nowrap">장례지도사 자격증 보유<br>현장 의전 경험</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">모든 장례지도사가<br><span style="color: var(--Color-Primary-600);">처음부터 끝까지</span><span style="letter-spacing: -0.02em; color: var(--Color-Fg-Primary);"> 책임집니다</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch;gap:0 clamp(4px,1cqi,10px);max-width:760px;margin:44px auto 0">
+      <sc-for list="{{ funeralSteps }}" as="s" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;height:100%">
+          <span style="font:var(--Font-Weight-Bold) clamp(13px,2.2cqi,17px)/1.2 var(--Font-Family-Base);letter-spacing:-0.02em">{{ s.no }}</span>
+          <span style="position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:8px">
+            <span style="position:absolute;left:-6px;right:-6px;top:50%;height:1px;background:var(--Color-Border-Secondary)"></span>
+            <span style="position:relative;width:7px;height:7px;border-radius:9999px;background:var(--Color-GrayScale-900)"></span>
+          </span>
+          <span style="margin-top:4px;min-height:calc(clamp(11px,1.9cqi,14px) * 2.8);display:flex;align-items:center;font:var(--Font-Weight-Bold) clamp(11px,1.9cqi,14px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">{{ s.name }}</span>
+          <span style="min-height:calc(clamp(10px,1.7cqi,13px) * 3.1);font:var(--Font-Weight-Regular) clamp(10px,1.7cqi,13px)/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);word-break:keep-all">{{ s.desc }}</span>
+          <sc-if value="{{ s.parallel }}" hint-placeholder-val="{{ false }}">
+            <span style="margin-top:auto;padding:3px 8px;border-radius:6px;background:var(--Color-Primary-600);color:var(--Color-GrayScale-White);font:var(--Font-Weight-Bold) clamp(9px,1.5cqi,11px)/1.4 var(--Font-Family-Base);white-space:nowrap">동시 진행</span>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    
+  </section><section style="margin:0 {{ bleedX }};width:{{ bleedW }};padding:clamp(48px,11cqi,140px) {{ bleedPad }} 0;background:var(--Color-GrayScale-White);text-align:center">
+    <h2 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty;color:var(--Color-Fg-Primary)">이게 가능한 이유는<br>직영 영업조직이 없기 때문입니다</h2>
+    <div style="margin:28px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty"><p data-pm-slice="0 0 []" style="color: #575E64">한 건마다 나가던 영업수당을<br><b>고객님 혜택</b>으로 돌려드려요</p></div>
+    <div style="max-width:520px;margin:60px auto 0">
+      <img src="assets/no-sales.png" alt="아정당 › 중간·영업 없음 › 고객" style="display:block;width:100%;height:auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:10px">
+        
+        
+        
+      </div>
+    </div>
+    <p style="margin:clamp(40px,7cqi,72px) 0 0;font:var(--Font-Weight-Bold) clamp(20px,4.2cqi,28px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary);text-wrap:pretty">장례 위로금 <span style="color:var(--Color-Primary-600)">최대 50만 원</span>을<br>현금으로 드립니다</p>
+    <p style="margin: 16px 0 0; font: var(--Font-Weight-Regular) clamp(14px,2.7cqi,17px)/1.6 var(--Font-Family-Base); letter-spacing: -0.02em; color: #575E64">다른 상조에는 없는 혜택입니다</p>
+    <img src="assets/consolation-cash-v2.png" alt="장례 위로금 50만 원" style="display:block;width:100%;max-width:220px;height:auto;margin:28px auto 0">
+  </section>
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) 22px/1.75 var(--Font-Family-Base);letter-spacing:-0.02em"><span style="font-weight: 500;">당장 가입하지 않으시더라도<br>꼭 알아두셔야 할 내용을 영상에 담았습니다</span></h3>
+    <a href="https://www.youtube.com/watch?v=-V9u9Fyd-gk" target="_blank" rel="noopener" style="display:block;position:relative;margin:28px auto 0;max-width:640px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#0e1116">
+      <img src="https://img.youtube.com/vi/-V9u9Fyd-gk/maxresdefault.jpg" alt="아정당 상조 영상" style="display:block;width:100%;height:100%;object-fit:cover">
+      <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:9999px;background:rgba(14,17,22,.72)">
+        <span style="width:0;height:0;border-left:22px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px"></span>
+      </span>
+    </a>
+  </section><section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+      <span style="font:var(--Font-Weight-Bold) clamp(18px,3.4cqi,22px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-GrayScale-900)">아정당은</span>
+      <span style="width:100%;max-width:150px;height:2px;background:var(--Color-GrayScale-900)"></span>
+    </div>
+    <h3 style="margin: 28px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em">속일 수 없는 <span style="color:var(--Color-Primary-600)">구조</span>입니다</h3>
+    <p style="margin:28px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);letter-spacing:-0.02em">인터넷·가전렌탈·휴대폰·이사·청소부터<br>상조까지 여러 생활 서비스를 함께 운영합니다.</p>
+    <img src="assets/life-services.png" alt="아정당 생활서비스" style="display:block;width:100%;max-width:520px;height:auto;margin:36px auto 0">
+    <p style="margin:36px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">한 번의 실망으로 <strong style="font-weight:var(--Font-Weight-Bold)">브랜드의 전체 신뢰를 잃기 때문에</strong></p>
+    <p style="margin:6px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">당장의 이득보다, <span style="color:var(--Color-Primary-600)">서비스 본질을 택했습니다.</span></p>
+  </section><section style="margin:0 {{ bleedX }};width:{{ bleedW }};padding:clamp(48px,11cqi,140px) {{ bleedPad }} 0;background:var(--Color-GrayScale-White);text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+      <span style="font:var(--Font-Weight-Bold) clamp(18px,3.4cqi,22px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-GrayScale-900)">약속합니다</span>
+      <span style="width:100%;max-width:150px;height:2px;background:var(--Color-GrayScale-900)"></span>
+    </div>
+    <h3 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty;color:var(--Color-Fg-Primary)">부당한 추가 비용은 없습니다</h3>
+    <img src="assets/no-extra-cost.png" alt="아정라이프케어 장례상품 유의사항 — 회원의 상품 추가 요청이 없는 한 추가 비용은 발생되지 않습니다" style="display:block;width:100%;max-width:560px;height:auto;margin:32px auto 0"><p style="margin: 12px 0 0; font: var(--Font-Weight-Regular) clamp(11px,2.2cqi,12px)/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); width: 100%; max-width: 560px; margin-left: auto; margin-right: auto; text-align: right">※ 아정당 상조 계약서</p><p style="margin:24px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">영업 수수료, 용품 강매, 수고비 등<br>단 한 건의 요구도 하지 않겠습니다</p>
+
+    
+    
+
+    <div style="position:relative;max-width:460px;margin:52px auto 0;padding:44px 28px 36px;border-radius:20px;border:1.5px solid var(--Color-Border-Primary)">
+      <span style="position:absolute;top:0;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--Color-GrayScale-White)">
+        <span style="width:6px;height:6px;border-radius:9999px;background:var(--Color-GrayScale-900)"></span>
+        <span style="font:var(--Font-Weight-Bold) clamp(15px,2.8cqi,18px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary);white-space:nowrap">부당 강요 시</span>
+        <span style="width:6px;height:6px;border-radius:9999px;background:var(--Color-GrayScale-900)"></span>
+      </span>
+      <span style="display:block;font:var(--Font-Weight-Bold) clamp(44px,9cqi,64px)/1 var(--Font-Family-Base);letter-spacing:-0.03em;color:var(--Color-Primary-600)"><span style="font-size:0.45em;color:var(--Color-Fg-Primary)">차액 </span>120%<span style="font-size:0.45em;color:var(--Color-Fg-Primary)"> 보상</span></span>
+      
+    </div>
+    
+  </section>
+
+  
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">가입 즉시<br><span style="color:var(--Color-Primary-600)">사용 가능한 멤버십 혜택</span></h2>
+
+    
+
+    <div style="display:flex;flex-wrap:{{ msWrap }};overflow-x:{{ msOverflow }};scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;max-width:760px;margin:12px auto 0;padding-bottom:6px">
+      <div style="flex:{{ msCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 18px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="width:56px;height:56px;border-radius:9999px;background:#E8EFFD;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--Color-Primary-600)" stroke-width="1.8" style="width:24px;height:24px"><path d="M20 12.5 12.5 20 4 11.5V4h7.5L20 12.5Z" stroke-linejoin="round"></path><circle cx="8.5" cy="8.5" r="1.4"></circle></svg>
+        </span>
+        <span style="font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">아정당 상조 전용 회원몰</span>
+        <span style="font:var(--Font-Weight-Regular) 13px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">회원몰에서만 가능한<br>24시간 특가·타임세일 등 단독 혜택</span>
+      </div>
+      <div style="flex:{{ msCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 18px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="width:56px;height:56px;border-radius:9999px;background:#EAF3FF;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--Color-Primary-600)" stroke-width="1.8" style="width:24px;height:24px"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M10 10l4.5 2-4.5 2v-4Z" stroke-linejoin="round"></path></svg>
+        </span>
+        <span style="font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">영화관람권 최대 20% 할인</span>
+        <span style="font:var(--Font-Weight-Regular) 13px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">CGV·메가박스·롯데시네마 모두 가능!<br>월 1회 동반 1인 한정</span>
+      </div>
+      <div style="flex:{{ msCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 18px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="width:56px;height:56px;border-radius:9999px;background:#F3EDFB;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7B5BD6" stroke-width="1.8" style="width:24px;height:24px"><path d="M4 5.5h6a2 2 0 0 1 2 2V19a2 2 0 0 0-2-2H4V5.5Z" stroke-linejoin="round"></path><path d="M20 5.5h-6a2 2 0 0 0-2 2V19a2 2 0 0 1 2-2h6V5.5Z" stroke-linejoin="round"></path></svg>
+        </span>
+        <span style="font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">온라인 강의 최대 60% 할인</span>
+        <span style="font:var(--Font-Weight-Regular) 13px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">어학, 투자, 직무 강의 등<br>온라인 자기계발 콘텐츠 할인 제공</span>
+      </div>
+      <div style="flex:{{ msCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 18px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="width:56px;height:56px;border-radius:9999px;background:#E7F5F3;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2F9E8F" stroke-width="1.8" style="width:24px;height:24px"><rect x="5" y="4" width="14" height="16" rx="2"></rect><path d="M12 9v6M9 12h6" stroke-linecap="round"></path></svg>
+        </span>
+        <span style="font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">건강검진 최대 할인 혜택</span>
+        <span style="font:var(--Font-Weight-Regular) 13px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">기업체 임직원 전용 검진가로<br>본인, 부모, 가족, 지인까지 이용</span>
+      </div>
+      <div style="flex:{{ msCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 18px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="width:56px;height:56px;border-radius:9999px;background:#EEF6E6;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5FA83C" stroke-width="1.8" style="width:24px;height:24px"><rect x="6" y="4" width="12" height="12" rx="2"></rect><path d="M8 19l-1.5 2M16 19l1.5 2M9 16.5h6" stroke-linecap="round"></path></svg>
+        </span>
+        <span style="font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">여행·기차 특가 서비스</span>
+        <span style="font:var(--Font-Weight-Regular) 13px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">코레일 여행 상품 최대 20% 특가 할인<br>여행사 별 국내/해외 여행 상품 상시 할인</span>
+      </div>
+      <div style="flex:{{ msCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 18px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="width:56px;height:56px;border-radius:9999px;background:#FDF2DF;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#D99A24" stroke-width="1.8" style="width:24px;height:24px"><path d="M4 20V9l8-5 8 5v11" stroke-linejoin="round"></path><path d="M9 20v-5h6v5M9 11h.01M15 11h.01" stroke-linecap="round"></path></svg>
+        </span>
+        <span style="font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">파라다이스 외 200여개 리조트</span>
+        <span style="font:var(--Font-Weight-Regular) 13px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">기업체 임직원 전용 금액으로<br>본인, 부모, 가족, 지인까지 이용</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.5 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty">만기까지 유지하면<br><span style="color:var(--Color-Primary-600)">원하시는 방법</span>으로 돌려드려요</h2>
+
+    <div style="display:flex;gap:12px;margin-top:40px;text-align:left;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px">
+      <div style="flex:0 0 min(78%,280px);scroll-snap-align:start;display:flex;flex-direction:column;padding:20px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="font:var(--Font-Weight-Bold) 18px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">냈던 돈 100% 환급</span>
+        <p style="margin:12px 0 0;min-height:48px;font:var(--Font-Weight-Regular) 14px/1.7 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">만기 시 현금으로 돌려받기</p>
+        <img src="assets/cash-stack.png" alt="" style="width:100%;aspect-ratio:16/10;object-fit:contain;border-radius:14px;margin-top:18px">
+        <a href="#apply" style="display:block;margin-top:26px;text-align:center;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Primary-600);color:var(--Color-Primary-600);font:var(--Font-Weight-Bold) 14px/1 var(--Font-Family-Base);padding:14px 10px;border-radius:12px;cursor:pointer" onClick="{{ openCalc }}">환급금 계산하기</a>
+      </div>
+      <div style="flex:0 0 min(78%,280px);scroll-snap-align:start;display:flex;flex-direction:column;padding:20px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="font:var(--Font-Weight-Bold) 18px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">상조 서비스 제공</span>
+        <p style="margin:12px 0 0;min-height:48px;font:var(--Font-Weight-Regular) 14px/1.7 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">가입 즉시 행사 가능</p>
+        <img src="assets/refund-service.png" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;margin-top:18px">
+        <a href="#apply" style="display:block;margin-top:26px;text-align:center;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Primary-600);color:var(--Color-Primary-600);font:var(--Font-Weight-Bold) 14px/1 var(--Font-Family-Base);padding:14px 10px;border-radius:12px;cursor:pointer" onClick="{{ openSvc }}">자세히 보기</a>
+      </div>
+      <div style="flex:0 0 min(78%,280px);scroll-snap-align:start;display:flex;flex-direction:column;padding:20px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+        <span style="font:var(--Font-Weight-Bold) 18px/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all">다른 서비스 제공</span>
+        <p style="margin:12px 0 0;min-height:48px;font:var(--Font-Weight-Regular) 14px/1.7 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">크루즈·여행·어학연수·예식·이사 할인</p>
+        <img src="assets/refund-alt.png" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;margin-top:18px">
+        <a href="#apply" style="display:block;margin-top:26px;text-align:center;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Primary-600);color:var(--Color-Primary-600);font:var(--Font-Weight-Bold) 14px/1 var(--Font-Family-Base);padding:14px 10px;border-radius:12px;cursor:pointer" onClick="{{ openAlt }}">자세히 보기</a>
+      </div>
+    </div>
+    <p style="margin:24px 0 0;font:var(--Font-Weight-Regular) 12px/1.8 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">거치 4년 뒤 상조 서비스 미이용 시 · 중도 해지는 표준약관대로 환급 · 전환 서비스 제휴처·조건</p>
+  </section>
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <div>
+      <span style="display:inline-block;font:var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);border-bottom:2px solid var(--Color-GrayScale-900);padding-bottom:8px">혹시?</span>
+      <h3 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">이미 가입한 상조가<br><span style="color:var(--Color-Primary-600)">있으신가요?</span></h3>
+      <p style="margin: 56px 0 0; font: var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.75 var(--Font-Family-Base); letter-spacing: -0.02em; margin-bottom: 0px; margin-top: 28px">기존 비싼 상조는 냈던 돈&nbsp;<strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">환급 받고,<br>장례는 저렴한 아정당</strong>으로 치르세요.</p><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:start;gap:12px;max-width:520px;margin:56px auto 0">
+        <div style="position:relative">
+          <img src="assets/flower.png" alt="" style="position:absolute;left:50%;top:0;transform:translate(-50%,-52%);width:86px;height:auto;z-index:3;filter:drop-shadow(0 8px 16px rgba(20,30,60,.14))">
+          <div style="position:relative;background:var(--Color-GrayScale-White);border-radius:20px;padding:44px 18px 28px;box-shadow:0 10px 26px rgba(20,30,60,.07)">
+            <p style="margin:0;font:var(--Font-Weight-Regular) 14px/1.4 var(--Font-Family-Base)">기존 상조는</p>
+            <p style="margin:8px 0 0;font:var(--Font-Weight-Bold) 22px/1.3 var(--Font-Family-Base);letter-spacing:-0.02em">유지</p>
+          </div>
+          <p style="margin:16px 0 0;font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base)">만기 후 100% 환급</p>
+          <p style="margin:8px 0 0;font:var(--Font-Weight-Regular) 12px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">*가입한 상품 약관에 따라 다름</p>
+        </div>
+        <span style="margin-top:52px;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9999px;background:var(--Color-GrayScale-900);color:var(--Color-Fg-Primary);font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1 var(--Font-Family-Base)">+</span>
+        <div style="position:relative">
+          <img src="assets/silver-coin.png" alt="" style="position:absolute;left:50%;top:0;transform:translate(-50%,-52%);width:86px;height:auto;z-index:3;filter:drop-shadow(0 8px 16px rgba(20,30,60,.14))">
+          <div style="position:relative;background:var(--Color-Primary-600);border-radius:20px;padding:44px 18px 28px;box-shadow:0 14px 30px rgba(18,86,240,.22)">
+            <p style="margin:0;font:var(--Font-Weight-Regular) 14px/1.4 var(--Font-Family-Base);color:rgba(255,255,255,.8)">실제 장례는</p>
+            <p style="margin:8px 0 0;font:var(--Font-Weight-Bold) 22px/1.3 var(--Font-Family-Base);color:#fff;letter-spacing:-0.02em">아정당 상조</p>
+          </div>
+          <p style="margin:16px 0 0;font:var(--Font-Weight-Bold) 16px/1.4 var(--Font-Family-Base);color:var(--Color-Primary-600)">단 119만 원</p>
+          <p style="margin:8px 0 0;font:var(--Font-Weight-Regular) 12px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">*무빈소 장례 기준</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">365일 24시간, <span style="color:var(--Color-Primary-600)">전화 한 통이면 됩니다</span></h3>
+    <img src="assets/branch-map.png" alt="전국 지부 지도" style="display:block;width:100%;max-width:420px;height:auto;margin:28px auto 0">
+    <p style="margin:24px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">전국 어디서든,<br><span style="color:var(--Color-Primary-600)">가장 가까운 지부 장례지도사 출동</span></p>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:520px;margin:36px auto 0">
+      <a href="tel:1833-7377" style="display: flex; align-items: center; justify-content: center; height: 56px; text-align: center; background: var(--Color-Primary-600); color: var(--Color-GrayScale-White); font: var(--Font-Weight-Bold) 16px/1.3 var(--Font-Family-Base); border: 1px solid var(--Color-Primary-600); border-radius: 12px; word-break: keep-all">긴급 장례 전화 상담 ›</a>
+      <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:56px;text-align:center;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Primary-600);color:var(--Color-Primary-600);font:var(--Font-Weight-Bold) 16px/1.3 var(--Font-Family-Base);border-radius:12px;word-break:keep-all">우리 지역 장례식장 찾아보기 ›</a>
+    </div>
+  </section>
+
+  <section style="margin:clamp(48px,11cqi,140px) {{ bleedX }} 0;width:{{ bleedW }};padding:clamp(44px,10cqi,120px) 0;background:var(--Color-GrayScale-050)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 24px">
+      <span style="font:var(--Font-Weight-Bold) clamp(15px,2.8cqi,18px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-GrayScale-900)">실제 고객 후기</span>
+      <span style="width:100%;max-width:150px;height:2px;background:var(--Color-GrayScale-900)"></span>
+    </div>
+    <h3 data-hm-skip="1" style="margin:28px 24px 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-align:center">믿고 선택해주셔서<br><span style="color:var(--Color-Primary-600)">감사합니다</span></h3>
+
+    <div style="display:grid;grid-template-columns:{{ reviewCols }};gap:12px;max-width:760px;margin:40px auto 0;padding:0 24px">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:14px;background:var(--Color-GrayScale-White);text-align:left">
+          <span style="font:var(--Font-Weight-Medium) 13px/1 var(--Font-Family-Base);color:#FFB400">★★★★★</span>
+          <span style="font:var(--Font-Weight-Regular) clamp(13px,2.3cqi,15px)/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Primary);word-break:keep-all">{{ r.body }}</span>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px">
+            <span style="font:var(--Font-Weight-Regular) 12px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">{{ r.manager }}</span>
+            <span style="font:var(--Font-Weight-Regular) 12px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">{{ r.who }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <p style="margin:40px 24px 0;font:var(--Font-Weight-Medium) clamp(14px,2.7cqi,17px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-align:center;text-wrap:pretty">고객님이 남겨주신 진심 어린 후기를 깊이 새기며,<br><strong style="font-weight:var(--Font-Weight-Bold);color:var(--Color-Fg-Primary)">한결같은 정성으로 보답</strong>하겠습니다.</p>
+  </section>
+
+  <section style="padding:clamp(48px,11cqi,140px) 24px 0">
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;text-align:center">자주 묻는 질문</h3>
+    <div style="margin-top:28px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="9">
+        <div style="border-bottom:1px solid var(--Color-Border-Tertiary)">
+          <div onClick="{{ f.onClick }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px;cursor:pointer">
+            <span style="font:var(--Font-Weight-SemiBold) 16px/1.5 var(--Font-Family-Base);word-break:keep-all">{{ f.q }}</span>
+            <span style="flex:0 0 auto;color:var(--Color-Fg-Tertiary);font-size:14px;transition:transform 160ms ease;transform:{{ f.caretTransform }}">⌄</span>
+          </div>
+          <div style="overflow:hidden;transition:max-height 200ms ease;max-height:{{ f.bodyMaxHeight }}">
+            <p style="margin:0;padding:0 4px 20px;font:var(--Font-Weight-Regular) 15px/1.7 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">{{ f.a }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="apply" style="margin:clamp(48px,11cqi,140px) {{ bleedX }} 0;width:{{ bleedW }};padding:clamp(48px,8cqi,96px) {{ bleedPad }};background:var(--Color-GrayScale-050)">
+    <span style="font:var(--Font-Weight-SemiBold) 13px/1 var(--Font-Family-Base);letter-spacing:0.08em;color:var(--Color-Primary-600)">간편 상담</span>
+    <h3 data-hm-skip="1" style="margin:16px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">30초면 충분해요</h3>
+    <p style="margin:12px 0 0;font:var(--Font-Weight-Regular) 15px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">급하시면 1833-7377로 바로 전화 주세요.</p>
+
+    <div style="display:flex;flex-direction:column;gap:20px;margin-top:32px;padding:28px 24px;border-radius:20px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
+      <label style="display:flex;flex-direction:column;gap:8px">
+        <span style="font:var(--Font-Weight-Medium) 14px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">이름</span>
+        <input type="text" placeholder="홍길동" style="height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--Color-Border-Primary);font:var(--Font-Weight-Regular) 15px/1 var(--Font-Family-Base);color:var(--Color-Fg-Primary)">
+      </label>
+      <label style="display:flex;flex-direction:column;gap:8px">
+        <span style="font:var(--Font-Weight-Medium) 14px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">전화번호</span>
+        <input type="tel" placeholder="010-0000-0000" style="height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--Color-Border-Primary);font:var(--Font-Weight-Regular) 15px/1 var(--Font-Family-Base);color:var(--Color-Fg-Primary)">
+      </label>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font:var(--Font-Weight-Medium) 14px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Secondary)">관심 상품</span>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ interests }}" as="i" hint-placeholder-count="4">
+            <button onClick="{{ i.onClick }}" style="text-align:left;cursor:pointer;height:52px;padding:0 16px;border-radius:12px;font:var(--Font-Weight-Medium) 15px/1.4 var(--Font-Family-Base);transition:background 160ms ease,border-color 160ms ease,color 160ms ease;background:{{ i.bg }};border:{{ i.border }};color:{{ i.fg }}">{{ i.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:4px;border-top:1px solid var(--Color-Border-Tertiary)">
+        <label style="display:flex;align-items:center;gap:10px;padding-top:12px;cursor:pointer">
+          <input type="checkbox" style="width:20px;height:20px;accent-color:var(--Color-Primary-600)">
+          <span style="font:var(--Font-Weight-Bold) 15px/1.4 var(--Font-Family-Base)">전체동의</span>
+        </label>
+        <sc-for list="{{ consents }}" as="c" hint-placeholder-count="3">
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+            <input type="checkbox" style="width:18px;height:18px;accent-color:var(--Color-Primary-600)">
+            <span style="font:var(--Font-Weight-Regular) 13px/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">{{ c }}</span>
+          </label>
+        </sc-for>
+      </div>
+      <a href="tel:1833-7377" style="display:block;text-align:center;background:var(--Color-Primary-600);color:var(--Color-Fg-Primary);font:var(--Font-Weight-Bold) 17px/1 var(--Font-Family-Base);padding:19px;border-radius:12px">내 혜택 확인하기</a>
+      <p style="margin:0;text-align:center;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">남겨주신 정보는 상담 목적으로만 사용해요.</p>
+    </div>
+  </section>
+
+  <sc-if value="{{ calcOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:1200;background:rgba(10,14,20,.5);display:flex;align-items:center;justify-content:center;padding:20px">
+    <div onClick="{{ stopClick }}" style="position:relative;width:100%;max-width:560px;max-height:86vh;overflow-y:auto;background:#fff;border-radius:22px;padding:32px 28px">
+      <span onClick="{{ closeModal }}" style="position:absolute;right:20px;top:18px;cursor:pointer;font-size:18px;color:#8b93a3">✕</span>
+      <div style="display:flex;justify-content:space-between;gap:2px;overflow-x:auto;border-bottom:1px solid #eceff4">
+        <sc-for list="{{ calcTabs }}" as="t" hint-placeholder-count="7">
+          <button onClick="{{ t.onClick }}" style="flex:0 0 auto;background:none;border:0;cursor:pointer;padding:14px 10px;font-size:15px;letter-spacing:-0.4px;white-space:nowrap;font-weight:{{ t.weight }};color:{{ t.color }};border-bottom:2px solid {{ t.border }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="margin-top:28px;background:#f7f9fd;border-radius:18px;padding:32px 28px">
+        <div style="font-size:19px;font-weight:700;line-height:1.5;letter-spacing:-0.6px;word-break:keep-all">{{ calcTitle }}</div>
+        <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:#5a6373;word-break:keep-all">{{ calcDesc }}</p>
+        <div style="margin:24px 0;border-top:1px dashed #cfd8e6;width:120px"></div>
+        <div style="font-size:14px;font-weight:700;color:#5a6373">월 납입 금액</div>
+        <div style="margin-top:8px;font-size:28px;font-weight:700;letter-spacing:-1px">{{ calcMonthly }}</div>
+        <div style="margin-top:24px;font-size:14px;font-weight:700;color:#5a6373">총 환급 금액</div>
+        <div style="margin-top:8px;font-size:28px;font-weight:700;color:#1256f0;letter-spacing:-1px">{{ calcTotal }}</div>
+      </div>
+      <a href="#apply" onClick="{{ closeModal }}" style="display:block;margin-top:24px;text-align:center;background:#1256f0;color:#fff;font-size:17px;font-weight:700;padding:17px;border-radius:12px">상담 신청하기</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ svcOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:1200;background:rgba(10,14,20,.5);display:flex;align-items:center;justify-content:center;padding:20px">
+    <div onClick="{{ stopClick }}" style="position:relative;width:100%;max-width:640px;max-height:86vh;overflow-y:auto;background:#fff;border-radius:22px;padding:32px 28px">
+      <span onClick="{{ closeModal }}" style="position:absolute;right:20px;top:18px;cursor:pointer;font-size:18px;color:#8b93a3">✕</span>
+      <div style="text-align:center">
+        <h3 style="margin:0;font-size:28px;line-height:1.45;font-weight:700;letter-spacing:-1px">장례 상황에 맞춰<br>6개 상품 중 선택하여 진행</h3>
+        <p style="margin:14px 0 0;font-size:15px;color:#5a6373;word-break:keep-all">장례 상황에 맞춰 원하는 상품을 선택해 장례를 진행할 수 있습니다</p>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <sc-for list="{{ svcTabs }}" as="t" hint-placeholder-count="6">
+          <div onClick="{{ t.onClick }}" style="cursor:pointer;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:-0.3px;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</div>
+        </sc-for>
+      </div>
+      <div style="margin-top:24px;background:#f7f9fd;border-radius:18px;padding:28px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <div style="font-size:17px;font-weight:700;letter-spacing:-0.5px;white-space:nowrap">{{ svcType }}</div>
+          <p style="margin:0;font-size:15px;line-height:1.7;color:#3f4756;word-break:keep-all">{{ svcDesc }}</p>
+        </div>
+        <div style="margin:24px 0;border-top:1px dashed #d6dde8"></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <div style="font-size:17px;font-weight:700;letter-spacing:-0.5px">장례인력</div>
+          <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end">
+            <sc-for list="{{ svcStaff }}" as="s" hint-placeholder-count="3">
+              <div style="text-align:center;width:78px">
+                <div role="img" style="width:52px;height:52px;margin:0 auto;background-repeat:no-repeat;background-position:center;background-size:contain;background-image:url({{ s.img }})"></div>
+                <div style="margin-top:10px;font-size:14px;font-weight:700;letter-spacing:-0.4px;word-break:keep-all">{{ s.name }}</div>
+                <div style="margin-top:6px;font-size:13px;color:#8b93a3;word-break:keep-all">{{ s.detail }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="margin:24px 0;border-top:1px dashed #d6dde8"></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <div style="font-size:17px;font-weight:700;letter-spacing:-0.5px">장례용품</div>
+          <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end">
+            <sc-for list="{{ svcGoods }}" as="g" hint-placeholder-count="6">
+              <div style="text-align:center;width:78px">
+                <div role="img" style="width:52px;height:52px;margin:0 auto;background-repeat:no-repeat;background-position:center;background-size:contain;background-image:url({{ g.img }})"></div>
+                <div style="margin-top:10px;font-size:14px;font-weight:700;letter-spacing:-0.4px;word-break:keep-all">{{ g.name }}</div>
+                <div style="margin-top:6px;font-size:13px;color:#8b93a3;word-break:keep-all">{{ g.detail }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <a href="#apply" onClick="{{ closeModal }}" style="display:block;margin-top:24px;text-align:center;background:#1256f0;color:#fff;font-size:17px;font-weight:700;padding:17px;border-radius:12px">상담 신청하기</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ altOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:1200;background:rgba(10,14,20,.5);display:flex;align-items:center;justify-content:center;padding:20px">
+    <div onClick="{{ stopClick }}" style="position:relative;width:100%;max-width:640px;max-height:86vh;overflow-y:auto;background:#fff;border-radius:22px;padding:32px 28px">
+      <span onClick="{{ closeModal }}" style="position:absolute;right:20px;top:18px;cursor:pointer;font-size:18px;color:#8b93a3">✕</span>
+      <div style="text-align:center">
+        <h3 style="margin:0;font-size:28px;line-height:1.45;font-weight:700;letter-spacing:-1px">만기 시 장례 대신<br>선택할 수 있는 즐거움</h3>
+        <h3 style="margin:10px 0 0;font-size:28px;font-weight:700;letter-spacing:-1px;color:#1256f0">전환 상품 패키지</h3>
+        <p style="margin:14px 0 0;font-size:15px;color:#5a6373">내 취향에 맞는 서비스를 선택해보세요.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px">
+        <sc-for list="{{ altItems }}" as="a" hint-placeholder-count="7">
+          <div style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background-color:#7f8da3">
+            <div role="img" style="position:absolute;inset:0;background-size:cover;background-position:center;background-image:url({{ a.img }})"></div>
+            <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,20,0.62) 0%,rgba(10,14,20,0.3) 42%,rgba(10,14,20,0) 70%)"></span>
+            <div style="position:absolute;left:16px;top:16px;right:16px;color:#fff">
+              <div style="font-size:17px;font-weight:700;line-height:1.45;letter-spacing:-0.6px;word-break:keep-all">{{ a.t1 }}</div>
+              <div style="font-size:17px;font-weight:700;line-height:1.45;letter-spacing:-0.6px;word-break:keep-all">{{ a.t2 }}</div>
+              <span style="display:inline-block;margin-top:10px;background:rgba(255,255,255,0.92);color:#1256f0;font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px">{{ a.badge }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <a href="#apply" onClick="{{ closeModal }}" style="display:block;margin-top:20px;text-align:center;background:#1256f0;color:#fff;font-size:17px;font-weight:700;padding:16px;border-radius:12px">상담 신청하기</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="position:fixed;left:0;right:0;bottom:24px;display:flex;justify-content:center;pointer-events:none;padding:0 20px;z-index:90;opacity:{{ ctaOpacity }};transform:{{ ctaTransform }};transition:opacity 300ms ease,transform 300ms ease">
+    <div style="pointer-events:auto">
+      <x-import component-from-global-scope="B2CDesignSystem_f744f0.Button" size="XL" leading-icon="phone" round="{{ true }}" dc-props="{{ callProps }}" hint-size="auto,56px">지금 바로 전화 상담 1833-7377</x-import>
+    </div>
+  </div>
+</div>
+
+<footer style="position:relative;z-index:1;width:100%;background:#F4F6FA;padding:40px 32px 48px">
+  <div style="width:100%;max-width:1024px;margin:0 auto;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <img src="assets/logo.png" alt="아정당" style="height:26px;width:auto;object-fit:contain;opacity:0.75">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <image-slot id="badge-appstore" shape="rounded" radius="8" placeholder="App Store 배지" style="width:168px;height:48px"></image-slot>
+        <image-slot id="badge-googleplay" shape="rounded" radius="8" placeholder="Google Play 배지" style="width:168px;height:48px"></image-slot>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;display:flex;gap:28px;flex-wrap:wrap">
+      <a href="#" style="font-size:15px;font-weight:600;color:#1F2429;text-decoration:none">회사소개</a>
+      <a href="#" style="font-size:15px;font-weight:600;color:#1F2429;text-decoration:none">공지사항</a>
+      <a href="#" style="font-size:15px;font-weight:600;color:#1F2429;text-decoration:none">이벤트</a>
+      <a href="#" style="font-size:15px;font-weight:600;color:#1F2429;text-decoration:none">사은품 지급 명단</a>
+    </div>
+
+    <div style="margin-top:16px;border-top:1px solid #DEE2E6"></div>
+
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:400;line-height:1.6;color:#575E64">
+      <p style="margin:0">사이트명 &nbsp;아정당 &nbsp;|&nbsp; 대표자 &nbsp;김민기</p>
+      <p style="margin:0">사업자명 &nbsp;아정네트웍스</p>
+      <p style="margin:0">사업자등록번호 &nbsp;329-88-02173 &nbsp;|&nbsp; 통신판매업 &nbsp;제2021-부산북구-0914호</p>
+      <p style="margin:0">대표번호 &nbsp;1833-3504 &nbsp;|&nbsp; 팩스 &nbsp;02-6944-8126 &nbsp;|&nbsp; 주소 &nbsp;부산광역시 북구 금곡대로8번길 33, 아남프라자 3층</p>
+      <p style="margin:0">개인정보 책임관리자 &nbsp;김환수 (<a href="mailto:zeus@ajd.co.kr" style="color:#575E64;text-decoration:underline">zeus@ajd.co.kr</a>)</p>
+      <p style="margin:0">광고제휴문의 <a href="mailto:contact@ajd.co.kr" style="color:#575E64;text-decoration:underline">contact@ajd.co.kr</a> &nbsp;|&nbsp; CS 고객센터 <a href="mailto:help@ajd.co.kr" style="color:#575E64;text-decoration:underline">help@ajd.co.kr</a></p>
+      <p style="margin:0">사업제휴문의 <a href="mailto:partner@ajd.co.kr" style="color:#575E64;text-decoration:underline">partner@ajd.co.kr</a> &nbsp;|&nbsp; 경영지원문의 <a href="mailto:office@ajd.co.kr" style="color:#575E64;text-decoration:underline">office@ajd.co.kr</a></p>
+      <p style="margin:12px 0 0">(주)아정네트웍스는 통신판매중개자이며 통신판매의 당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와 책임은 거래당사자에게 있습니다.</p>
+    </div>
+
+    <div style="margin-top:28px;display:flex;gap:12px">
+      <a href="#" aria-label="네이버" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#DEE2E6;font-size:14px;font-weight:800;color:#575E64;text-decoration:none">N</a>
+      <a href="#" aria-label="페이스북" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#DEE2E6;color:#575E64;text-decoration:none"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.2V14h2.3v7h3z"></path></svg></a>
+      <a href="#" aria-label="유튜브" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#DEE2E6;color:#575E64;text-decoration:none"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M21.6 8.4s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16.2 5.3 12 5.3 12 5.3s-4.2 0-6.8.2c-.4.1-1.3.1-2 .9-.6.6-.8 2-.8 2S2.2 10 2.2 11.7v1.6c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.7.2 6.7.2s4.2 0 6.8-.2c.4-.1 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.6c0-1.7-.2-3.3-.2-3.3zM10 15.1V9.4l5.4 2.9-5.4 2.8z"></path></svg></a>
+      <a href="#" aria-label="인스타그램" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#DEE2E6;color:#575E64;text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:17px;height:17px"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.4"></circle><circle cx="16.6" cy="7.4" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+      <a href="#" aria-label="틱톡" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#DEE2E6;color:#575E64;text-decoration:none"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M16.2 3h-2.6v11.1a2.3 2.3 0 1 1-1.8-2.2V9.2a5 5 0 1 0 4.4 5V8.6c.9.6 2 1 3.1 1V7A3.9 3.9 0 0 1 16.2 3z"></path></svg></a>
+    </div>
+
+    <div style="margin-top:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px;color:#575E64">
+          <a href="#" style="font-size:13px;font-weight:700;color:#1F2429;text-decoration:none">개인정보처리방침</a>
+          <span>|</span>
+          <a href="#" style="font-size:13px;color:#575E64;text-decoration:none">서비스 이용약관</a>
+          <span>|</span>
+          <a href="#" style="font-size:13px;color:#575E64;text-decoration:none">마케팅 정보수신 동의</a>
+          <span>|</span>
+          <a href="#" style="font-size:13px;color:#575E64;text-decoration:none">이메일 무단수집 거부</a>
+        </div>
+        <p style="margin:0;font-size:13px;color:#575E64">Copyright (주)아정네트웍스 2024-2026 All rights reserved.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <image-slot id="badge-award" shape="circle" style="width:96px;height:96px"></image-slot>
+        <span style="font-size:11px;line-height:1.4;color:#8C939A;text-align:center">한국 브랜드선호도 1위<br>서비스 2년 연속 1위</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1056,&quot;height&quot;:1400},&quot;viewMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;PC&quot;,&quot;모바일&quot;],&quot;default&quot;:&quot;PC&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;레이아웃&quot;}}">
+const HERO_SLIDES = [
+  { title1: "100만 원 현금", title2: "사은품 받아가세요", sub: "제휴카드 적용 시 월 0원, 최신 가전까지 함께 받아요", img: "assets/combo-appliances.png", alt: "가전 결합 선물" },
+  { title1: "15만원 노화방지 화장품", title2: "받아가세요", sub: "15만 원 상당의 화장품과 위로금 최대 50만 원 지급", img: "assets/pure-cosmetics.png", alt: "화장품 선물" }
+];
+
+const CALC_PLANS = [
+  { price: 9900, months: 180, title: "준비는 이른 게 아니라 현명한 거니까!", desc: "국내 가장 합리적 가격! '원하는 가전 렌탈 + 핵가족 맞춤 상조'" },
+  { price: 19900, months: 150, title: "준비는 이른 게 아니라 현명한 거니까!", desc: "현금 사은품 '가전 렌탈 + 상조 결합 상품'. 전환 상품 모두 선택 가능" },
+  { price: 29900, months: 150, title: "가성비와 혜택, 그 사이 가장 좋은 지점을 찾는다면", desc: "가전 업그레이드 하며, 상조 대비도 하고 싶은 분을 위한 부담없는 선택." },
+  { price: 39900, months: 150, title: "가전도, 혜택도, 삶의 기준을 조금 더 높이고 싶을 때", desc: "브랜드 가전 중심 프리미엄 라인업, 품격 있는 장례 구성." },
+  { price: 49900, months: 150, title: "삶의 기준을 바꾸는 순간, 조금 더 좋은 선택이 필요할 때", desc: "프리미엄 가전 라인업. 2구좌 최고 프리미엄 구성." },
+  { price: 59900, months: 150, title: "함께 살아온 가족에게, 마지막까지 즐거움을 주고 싶은 마음", desc: "'장례 2건 + 전환상품 2회' 제공. 부부가 가장 많이 선택하는 구성." },
+  { price: 79900, months: 150, title: "2구좌 패밀리 VIP 프리미엄 패키지가 필요하다면", desc: "프리미엄 가전 선택 옵션 + 장례 2건 + 전환상품 2회 제공 + VIP 장례 의전 제공" }
+];
+
+const SVC_ICONS = {
+  "장례지도사": "assets/ess-director.png",
+  "입관보조": "assets/ess-assistant.png",
+  "장례도우미": "assets/ess-helper.png",
+  "관(화장시)": "assets/coffin.png",
+  "유골함": "assets/urn.png",
+  "수의": "assets/ess-shroud.png",
+  "상복": "assets/ess-mourning.png",
+  "의전용품": "assets/ess-ritual.png",
+  "입관용품": "assets/ess-encoffin.png",
+  "헌화꽃": "assets/ess-flower.png",
+  "고인 이송차량": "assets/ess-hearse.png",
+  "장례차량": "assets/ess-limo.png",
+  "제단꽃 지원비": "assets/ess-flower.png",
+  "일회용품": "assets/ess-ritual.png"
+};
+
+const SVC_PLANS = [
+  { tab: "아정당119", type: "기본 장례 준비형", desc: "필수 서비스만 알뜰하게 담은 실속형 장례 상품입니다.",
+    staff: [["장례지도사","1인"],["입관보조","1인"]],
+    goods: [["관(화장시)","오동관(16mm)"],["유골함","백자 봉안함"],["수의","면(100%) 수의"],["장례차량","고인전용 리무진"],["입관용품","염포 등(15종)"],["고인 이송차량","관내 제공"]] },
+  { tab: "아정당139", type: "기본 장례 준비형", desc: "필수 서비스만 알뜰하게 담은 실속형 장례 상품입니다.",
+    staff: [["장례지도사","1인"],["입관보조","1인"]],
+    goods: [["관(화장시)","오동관(16mm)"],["유골함","백자 봉안함"],["수의","면(100%) 수의"],["장례차량","유족전용 버스"],["입관용품","염포 등(15종)"],["고인 이송차량","관내 제공"]] },
+  { tab: "아정당250", type: "표준 장례형", desc: "가장 많이 선택하는 구성이며, 가족·지인을 모시는 데 부족함이 없습니다.",
+    staff: [["장례지도사","1인"],["입관보조","1인"],["장례도우미","3인(1인 8시간)"]],
+    goods: [["관(화장시)","오동관(16mm)"],["유골함","백자 봉안함"],["수의","면(100%) 수의"],["상복","남상복 3벌 / 여상복 3벌"],["의전용품","부의록, 축문 등 (12종)"],["장례차량","고인전용 리무진 / 유족전용 버스 (택1)"],["입관용품","염포 등(15종)"],["고인 이송차량","관내 제공"],["헌화꽃","30송이"]] },
+  { tab: "아정당350", type: "여유 있는 프리미엄형", desc: "많은 손님을 맞이할 수 있도록 인력과 용품을 포함한 패키지 상품입니다.",
+    staff: [["장례지도사","1인"],["입관보조","1인"],["장례도우미","6인(1인 8시간)"]],
+    goods: [["관(화장시)","오동관(16mm)"],["유골함","백자 봉안함"],["수의","면(100%) 수의"],["상복","남상복 6벌 / 여상복 6벌"],["의전용품","부의록, 축문 등 (12종)"],["장례차량","고인전용 리무진, 유족전용 버스 (왕복 200km)"],["입관용품","염포 등(15종)"],["고인 이송차량","관내 제공"],["헌화꽃","30송이"],["제단꽃 지원비","20만원"]] },
+  { tab: "VIP1", type: "고급 프리미엄형", desc: "고급 용품과 전용 의전 차량을 갖추어, 고인을 모시는 예우에 품격을 더한 상품입니다.",
+    staff: [["장례지도사","1인"],["입관보조","1인"],["장례도우미","6인(1인 8시간)"]],
+    goods: [["관(화장시)","오동관(16mm)"],["유골함","고급 봉안함"],["수의","대마 수의"],["상복","남상복 6벌 / 여상복 6벌"],["의전용품","부의록, 축문 등 (12종)"],["장례차량","고인전용 리무진, 유족전용 버스 (왕복 300km)"],["입관용품","염포 등(15종)"],["고인 이송차량","관내 제공"],["헌화꽃","50송이"],["제단꽃 지원비","20만원"]] },
+  { tab: "VIP2", type: "최고급 프리미엄형", desc: "최상위 의전 인력과 고품격 용품으로 구성되어, 모든 절차에서 최상의 품격과 편안함을 보장하는 패키지 상품입니다.",
+    staff: [["장례지도사","1인"],["입관보조","1인"],["장례도우미","10인(1인 8시간)"]],
+    goods: [["관(화장시)","오동관(16mm)"],["유골함","최고급 봉안함"],["수의","비단 수의"],["상복","직계 가족 필요 수량 (남,여)"],["의전용품","부의록, 축문 등 (12종)"],["장례차량","고인전용 리무진, 유족전용 버스 (전국무료)"],["입관용품","염포 등(15종)"],["고인 이송차량","관내 제공"],["헌화꽃","200송이"],["제단꽃 지원비","150만원"],["일회용품","300인분"]] }
+];
+
+const ALT_ITEMS = [
+  { t1: "지중해 포함", t2: "5성급 크루즈", badge: "회원 전용 혜택", img: "uploads/A_vertical_portrait_photograph_of_a_luxury_cruis-1789697588495.png" },
+  { t1: "파라다이스 인천 등", t2: "전국 제휴 숙소 할인", badge: "회원 전용 혜택", img: "uploads/A_vertical_portrait_photograph_of_a_luxurious_5--1789697592416.png" },
+  { t1: "미국 캐나다 포함", t2: "전세계 어학원 지원", badge: "회원 전용 혜택", img: "uploads/A_vertical_portrait_photograph_capturing_the_Ame-1789697596211.png" },
+  { t1: "벽지, 타일수리, 공간 재정비", t2: "아정당 인테리어", badge: "최대 100만원 혜택", img: "uploads/A_vertical_portrait_photograph_of_a_beautifully_-1789697598239.png" },
+  { t1: "5성급 호텔", t2: "예식 제휴", badge: "회원 전용 혜택", img: "uploads/A_vertical_portrait_photograph_of_an_elegant_wed-1789697600919.png" },
+  { t1: "이사, 개인 청소까지", t2: "원하는 날짜에 할인", badge: "최대 100만원 혜택", img: "uploads/Use_the_exact_royal_blue_vest_from_the_reference_i-1788835480048.png" },
+  { t1: "국내외 프라이빗 골프클럽", t2: "라운딩 지원", badge: "준비중인 혜택", img: "uploads/A_vertical_portrait_photograph_of_a_private_golf-1789697602373.png" }
+];
+
+const RENTAL_URL = "https://lifecare-rental.ajd.co.kr/";
+const UTM = "&utm_source=naver&utm_medium=brandsearch_all&utm_campaign=bsa_naver_pc&utm_content=homelink&utm_term=%EC%95%84%EC%A0%95%EB%8B%B9";
+const PROD_VIEW = "https://lifecare-rental.ajd.co.kr/prodView.do?o_key=0025&c_key=0001&prod_code=";
+const PRODUCT_LINKS = {
+  "에어랩 i.d.™ 멀티 스타일러 앤 드라이어": PROD_VIEW + "RT2509000169" + UTM,
+  "에어스트레이트 스트레이트너": PROD_VIEW + "RT2607000054" + UTM,
+  "클린앤워시 하이진 물청소기": PROD_VIEW + "RT2607000034" + UTM,
+  "쿠쿠 김치냉장고 CKR-AD1410MS": PROD_VIEW + "RT2509000179" + UTM,
+  "LG 일반 냉장고 335L 오브제 컬렉션": PROD_VIEW + "RT2607000003" + UTM,
+  "LG 디오스 오브제 컬렉션 와인셀러 1도어": PROD_VIEW + "RT2509000164" + UTM
+};
+
+const PLANS = [
+  { label: "정수기", img: "assets/p01.png", items: [
+    { name: "쿠쿠 정수기 CP-AMS100EWH", img: "assets/p01.png", price: "39,900원", cardPrice: "14,900원" },
+    { name: "쿠쿠 정수기 CP-SS100WSV", img: "assets/p02.png", price: "49,900원", cardPrice: "24,900원" },
+    { name: "청호나이스 정수기 WI-36C90620N", img: "assets/p03.png", price: "49,900원", cardPrice: "24,900원" }
+  ] },
+  { label: "세탁기·건조기", img: "assets/p04.png", items: [
+    { name: "LG 꼬망스 플러스 F8WVR", img: "assets/p04.png", price: "19,900원", cardPrice: "0원" },
+    { name: "LG 트롬 세탁기 F17CTPR", img: "assets/p05.png", price: "29,900원", cardPrice: "0원" },
+    { name: "삼성 비스포크 AI 콤보 WD80H25BHY", img: "assets/p06.png", price: "79,900원", cardPrice: "54,900원" }
+  ] },
+  { label: "청소기", img: "assets/p07.png", items: [
+    { name: "쿠쿠 무선 CVC-AEM1410NW", img: "assets/p07.png", price: "19,900원", cardPrice: "0원" },
+    { name: "다이슨 디지털 슬림 옵틱", img: "assets/p08.png", price: "19,900원", cardPrice: "0원" },
+    { name: "LG 코드제로 AI 오브제컬렉션 A9", img: "assets/p09.png", price: "39,900원", cardPrice: "14,900원" }
+  ] },
+  { label: "다이슨", img: "assets/p11.png", items: [
+    { name: "에어스트레이트 스트레이트너", img: "assets/p11.png", price: "19,900원", cardPrice: "14,900원" },
+    { name: "에어랩 i.d.™ 멀티 스타일러 앤 드라이어", img: "assets/p10.png", price: "29,900원", cardPrice: "14,900원" },
+    { name: "클린앤워시 하이진 물청소기", img: "assets/p12.png", price: "29,900원", cardPrice: "14,900원" }
+  ] },
+  { label: "냉장고", img: "assets/p14.png", items: [
+    { name: "LG 일반 냉장고 335L 오브제 컬렉션", img: "assets/p14.png", price: "39,900원", cardPrice: "14,900원" },
+    { name: "쿠쿠 김치냉장고 CKR-AD1410MS", img: "assets/p13.png", price: "39,900원", cardPrice: "14,900원" },
+    { name: "LG 디오스 오브제 컬렉션 와인셀러 1도어", img: "assets/p15.png", price: "39,900원", cardPrice: "14,900원" }
+  ] },
+  { label: "공기청정기", img: "assets/prod-water.png", items: [
+    { name: "삼성 비스포크 큐브 에어", price: "9,900원", cardPrice: "0원" },
+    { name: "LG 퓨리케어 360˚", price: "19,900원", cardPrice: "0원" },
+    { name: "위닉스 타워 프리미엄", price: "9,900원", cardPrice: "0원" }
+  ] },
+  { label: "TV", img: "assets/prod-tv.png", items: [
+    { name: "삼성 Full HD TV 43인치 스탠드형", price: "29,900원", cardPrice: "14,900원" },
+    { name: "삼성 Neo QLED 65인치", price: "59,900원", cardPrice: "34,900원" },
+    { name: "LG 올레드 에보 77인치", price: "79,900원", cardPrice: "54,900원" }
+  ] },
+  { label: "에어컨", img: "assets/prod-water.png", items: [
+    { name: "LG 휘센 스탠드", price: "39,900원", cardPrice: "19,900원" },
+    { name: "삼성 비스포크 무풍갤러리", price: "39,900원", cardPrice: "19,900원" },
+    { name: "LG 휘센 벽걸이", price: "19,900원", cardPrice: "9,900원" }
+  ] }
+];
+
+const ESSENTIALS = [
+  { name: "장례지도사", img: "assets/ess-director.png" },
+  { name: "입관보조", img: "assets/ess-assistant.png" },
+  { name: "장례도우미", img: "assets/ess-helper.png" },
+  { name: "관", img: "assets/coffin.png" },
+  { name: "유골함", img: "assets/urn.png" },
+  { name: "저마수의", img: "assets/ess-shroud.png" },
+  { name: "상복", img: "assets/ess-mourning.png" },
+  { name: "의전용품", img: "assets/ess-ritual.png" },
+  { name: "입관용품", img: "assets/ess-encoffin.png" },
+  { name: "헌화꽃", img: "assets/ess-flower.png" },
+  { name: "고인 이송차량", img: "assets/ess-hearse.png" },
+  { name: "의전 차량", img: "assets/ess-limo.png" }
+];
+
+const PRODUCT_IMG = {
+  "정수기": "assets/prod-water.png",
+  "세탁기·건조기": "assets/prod-washer.png",
+  "청소기": "assets/prod-vacuum.png",
+  "TV": "assets/prod-tv.png",
+  "냉장고": "assets/prod-washer.png",
+  "에어컨": "assets/prod-water.png"
+};
+
+const FAQ = [
+  { q: "결합상조는 렌탈료를 어떻게 낮추나요?", a: "상조 결합 시 제휴 지원금이 추가로 적용되어, 같은 가전을 그냥 렌탈할 때보다 최대 20만 원까지 더 지원받습니다." },
+  { q: "만기에 돌려받는 돈은 어떻게 계산되나요?", a: "만기 후 장례 서비스를 이용하지 않은 경우 납입금을 환급해드립니다. 정확한 금액은 플랜과 약관 조건에 따라 달라집니다." },
+  { q: "월 100원, 나중에 오르나요?", a: "가입 시점의 납입 구조가 그대로 유지됩니다." },
+  { q: "사은품은 언제, 어디로 오나요?", a: "일정 회차 납입 후 원하시는 주소로 보내드려요. 부모님 댁 주소로도 보낼 수 있습니다." },
+  { q: "가입하면 바로 장례를 신청할 수 있나요?", a: "네, 가입 즉시 서비스 이용이 가능합니다. 365일 24시간 연락하시면 가장 가까운 지부의 장례지도사가 현장으로 출동합니다." },
+  { q: "예치금이 안전하게 보호되나요?", a: "선수금은 관련 법령에 따라 예치기관에 분리 보관되어 보호됩니다. 예치 증서는 가입 후 확인하실 수 있습니다." },
+  { q: "중도 해지 시 환불은 어떻게 되나요?", a: "순수상조는 중도 해지 시에도 약관 기준에 따라 환급됩니다. 결합상조는 렌탈 계약 조건에 따라 정산 기준이 달라지므로 상담에서 안내드립니다." },
+  { q: "장례 대신 다른 걸로 바꿀 수 있나요?", a: "만기 시 크루즈, 제휴 숙소, 어학연수, 인테리어, 예식, 이사·청소 등 전환 상품으로 사용하실 수 있고, 쓰고 남은 차액도 돌려드립니다." },
+  { q: "가전을 쓰는 도중에 장례가 생기면 어떻게 되나요?", a: "가입 시점부터 장례 서비스 이용이 가능합니다. 남은 렌탈 계약은 그대로 유지되며, 장례 비용은 계약 시점 가격으로 적용됩니다." }
+];
+
+const REVIEWS = [
+  { body: "“아빠의 장례를 딸인 저 혼자 감당하기엔 너무 암담 했습니다. 절차와 일정을 자세히 안내해 주셔서 고인을 좋은 곳으로 모실 수 있었습니다.”", manager: "전상배 팀장", who: "오** | 55세" },
+  { body: "“처음 상담부터 마지막까지 어려움을 모두 반영해 주셨습니다. 너무나 감사하고 도움이 되었습니다.”", manager: "서정수 팀장", who: "신** | 37세" },
+  { body: "박태섭 팀장님은 밤늦게 전화드려도 항상 받아주셨고, 궁금한 게 있으면 바로바로 답을 주셔서 답답할 일이 없었습니다.", manager: "박태섭 팀장", who: "김** | 42세" },
+  { body: "복잡한 절차를 빠르고 안정적으로 진행해주셔서 너무 감사드립니다. 아정당상조 덕분에 가족들과 차분하게 아버지를 잘 보내드렸습니다.", manager: "유승남 팀장", who: "박** | 58세" }
+];
+
+const REVIEWS_OLD = [
+  { title: "월 부담이 확 줄었어요", body: "제휴카드 할인까지 더하니 부담이 크게 낮아졌어요.", who: "김OO·정수기 결합" },
+  { title: "새벽에 갑자기 아버지를 보내드렸어요", body: "절차와 일정을 하나하나 안내해 주셨어요.", who: "오·55세" },
+  { title: "처음부터 끝까지 차분하게", body: "저희 사정을 다 반영해 주셨어요.", who: "신·37세" },
+  { title: "궁금할 때마다 바로 답", body: "물어볼 때마다 바로 답을 주셔서 답답할 일이 없었어요.", who: "김·42세" },
+  { title: "절차를 몰라도 괜찮았어요", body: "무엇부터 해야 할지 몰랐는데 순서대로 챙겨주셨습니다.", who: "이·48세" },
+  { title: "비용이 투명했어요", body: "추가로 붙는 금액 없이 안내받은 그대로였습니다.", who: "박·51세" }
+];
+
+const INTERESTS = [
+  "월 9,900원~ 결합상조 · 지원금 받기",
+  "월 100원 순수상조 · 사은품 받기",
+  "긴급장례 · 지금 도움이 필요해요",
+  "아직 잘 모르겠어요"
+];
+
+const CONSENTS = [
+  "(필수) 개인정보 제 3자 제공 및 활용 동의 (주)아정라이프케어)",
+  "(필수) 개인정보 수집 및 활용 동의 (주)아정라이프케어)",
+  "(선택) 마케팅 정보 수신 동의 (주)아정라이프케어)"
+];
+
+class Component extends DCLogic {
+  state = { cat: "정수기", line: 0, band: 0, bandOpen: true, plan: "combo", faqOpen: -1, interest: -1, showFloatingCta: false, modal: null, calcIdx: 0, svcIdx: 2 };
+  video = React.createRef();
+  componentDidMount() {
+    const tryPlay = () => {
+      const v = this.video.current;
+      if (!v) return;
+      v.muted = true;
+      v.defaultMuted = true;
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    tryPlay();
+    setTimeout(tryPlay, 400);
+    this.resumeVideo = tryPlay;
+    document.addEventListener("visibilitychange", tryPlay);
+    window.addEventListener("pointerdown", tryPlay, { once: true });
+    this.timer = setInterval(() => this.setState(s => ({ line: (s.line + 1) % HERO_SLIDES.length })), 4000);
+    this.bandTimer = setInterval(() => this.setState(s => ({ band: (s.band + 1) % 3 })), 3400);
+    this.setupHeadlines();
+    this.setupFloatingCta();
+  }
+
+  setupFloatingCta() {
+    const target = document.getElementById("v3-why-section");
+    if (!target) return;
+    this.ctaObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => this.setState({ showFloatingCta: e.isIntersecting || e.boundingClientRect.top < 0 }));
+    }, { threshold: 0 });
+    this.ctaObserver.observe(target);
+  }
+  componentDidUpdate() { this.setupHeadlines(); }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    clearInterval(this.bandTimer);
+    if (this.hmObserver) this.hmObserver.disconnect();
+    if (this.ctaObserver) this.ctaObserver.disconnect();
+    if (this.resumeVideo) document.removeEventListener("visibilitychange", this.resumeVideo);
+  }
+
+  setupHeadlines() {
+    const root = document.getElementById("dc-root") || document;
+    if (!this.hmObserver) {
+      this.hmObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-play");
+            this.hmObserver.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.35 });
+    }
+    root.querySelectorAll("h2, h3").forEach(h => {
+      if (h.dataset.hmDone === "1" || h.dataset.hmSkip === "1") return;
+      if (!h.closest("section")) return;
+      if (h.closest("section") && h.closest("section").querySelector("video")) return;
+      const walk = (node, keepColor) => {
+        Array.from(node.childNodes).forEach(child => {
+          if (child.nodeType === 3) {
+            const text = child.textContent;
+            if (!text.trim()) return;
+            const frag = document.createDocumentFragment();
+            Array.from(text).forEach(c => {
+              const s = document.createElement("span");
+              s.className = keepColor ? "hm-ch hm-keep" : "hm-ch";
+              s.textContent = c === " " ? "\u00A0" : c;
+              frag.appendChild(s);
+            });
+            node.replaceChild(frag, child);
+          } else if (child.nodeType === 1 && child.tagName !== "BR") {
+            const styled = child.getAttribute && child.getAttribute("style") || "";
+            walk(child, keepColor || /(^|;|\s)(color|background)/.test(styled));
+          }
+        });
+      };
+      walk(h, false);
+      const chars = h.querySelectorAll(".hm-ch");
+      chars.forEach((s, i) => s.style.setProperty("--i", i));
+      if (!chars.length) return;
+      h.dataset.hmDone = "1";
+      this.hmObserver.observe(h);
+    });
+    this.setupReveal(root);
+  }
+
+  setupReveal(root) {
+    if (!this.srObserver) {
+      this.srObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const kids = Array.from(e.target.children);
+          kids.forEach((el, i) => {
+            el.style.transitionDelay = (Math.min(i, 5) * 90) + "ms";
+            el.classList.add("sr-in");
+          });
+          this.srObserver.unobserve(e.target);
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    }
+    root.querySelectorAll("section").forEach(sec => {
+      if (sec.dataset.srDone === "1") return;
+      if (sec.querySelector("video")) return;
+      const kids = Array.from(sec.children);
+      if (!kids.length) return;
+      kids.forEach(el => el.classList.add("sr"));
+      sec.dataset.srDone = "1";
+      const r = sec.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.9) {
+        kids.forEach((el, i) => { el.style.transitionDelay = (i * 90) + "ms"; el.classList.add("sr-in"); });
+        return;
+      }
+      this.srObserver.observe(sec);
+    });
+  }
+  renderVals() {
+    const cat = this.state.cat;
+    return {
+      videoRef: this.video,
+      selectCombo: () => this.setState({ plan: "combo" }),
+      selectPure: () => this.setState({ plan: "pure" }),
+      comboTabBg: this.state.plan === "combo" ? "linear-gradient(105deg,#0B0B0C 0%,#14203A 52%,#1B3E8C 100%)" : "transparent",
+      comboTabFg: this.state.plan === "combo" ? "#fff" : "#9AA1A9",
+      comboTabShadow: this.state.plan === "combo" ? "inset 0 1px 0 rgba(255,255,255,.22),0 6px 16px rgba(15,18,22,.28)" : "none",
+      pureTabBg: this.state.plan === "pure" ? "linear-gradient(105deg,#0B0B0C 0%,#14203A 52%,#1B3E8C 100%)" : "transparent",
+      pureTabFg: this.state.plan === "pure" ? "#fff" : "#9AA1A9",
+      pureTabShadow: this.state.plan === "pure" ? "inset 0 1px 0 rgba(255,255,255,.22),0 6px 16px rgba(15,18,22,.28)" : "none",
+      isCombo: this.state.plan === "combo",
+      isPure: this.state.plan === "pure",
+      essentials: ESSENTIALS,
+      reviews: REVIEWS,
+      consents: CONSENTS,
+      interests: INTERESTS.map((label, i) => {
+        const on = this.state.interest === i;
+        return {
+          label,
+          onClick: () => this.setState({ interest: i }),
+          bg: on ? "var(--Color-Primary-050, #eef2fb)" : "var(--Color-GrayScale-White)",
+          border: "1px solid " + (on ? "var(--Color-Primary-600)" : "var(--Color-Border-Primary)"),
+          fg: on ? "var(--Color-Primary-600)" : "var(--Color-Fg-Secondary)"
+        };
+      }),
+      faqs: FAQ.map((f, i) => {
+        const open = this.state.faqOpen === i;
+        return {
+          q: f.q, a: f.a,
+          onClick: () => this.setState({ faqOpen: open ? -1 : i }),
+          caretTransform: open ? "rotate(180deg)" : "rotate(0deg)",
+          bodyMaxHeight: open ? "240px" : "0px"
+        };
+      }),
+      funeralSteps: [
+        { no: "01", name: "장례식장 예약", desc: "특실·일반실, 음식 인원 협의" },
+        { no: "02", name: "화장장 일정 조율", desc: "예약 확보, 변경 대응", parallel: true },
+        { no: "03", name: "고인 이송", desc: "병원·자택 → 식장 24시간" },
+        { no: "04", name: "입관·발인 진행", desc: "염습, 의전 절차 안내", parallel: true },
+        { no: "05", name: "장지 이동 안내", desc: "봉안당·수목장 안내" },
+        { no: "06", name: "사망신고·행정", desc: "관공서 신고, 49재" }
+      ],
+      bandTransform: "translateY(-" + this.state.band * 40 + "px)",
+      bandHeight: this.state.bandOpen ? "40px" : "0px",
+      closeBand: () => this.setState({ bandOpen: false }),
+      heroSlides: HERO_SLIDES.map((h, i) => {
+        const d = i - this.state.line;
+        return {
+          ...h,
+          opacity: d === 0 ? 1 : 0,
+          pointer: d === 0 ? "auto" : "none",
+          visibility: d === 0 ? "visible" : "hidden",
+          transform: "translateX(" + (d * 100) + "%)"
+        };
+      }),
+      heroCounter: (this.state.line + 1) + "/" + HERO_SLIDES.length,
+      nextHeroSlide: () => this.setState(s => ({ line: (s.line + 1) % HERO_SLIDES.length })),
+      isMobileView: (this.props.viewMode ?? "PC") === "모바일",
+      topLinksDisplay: (this.props.viewMode ?? "PC") === "모바일" ? "none" : "flex",
+      cardHeadMinH: (this.props.viewMode ?? "PC") === "모바일" ? "96px" : "clamp(112px,17cqi,132px)",
+      cardImgH: (this.props.viewMode ?? "PC") === "모바일" ? "112px" : "160px",
+      essentialCols: (this.props.viewMode ?? "PC") === "모바일" ? "repeat(3,minmax(0,1fr))" : "repeat(6,minmax(0,1fr))",
+      reviewCols: (this.props.viewMode ?? "PC") === "모바일" ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))",
+      cardBtnProps: { style: { width: "100%" } },
+      msWrap: (this.props.viewMode ?? "PC") === "모바일" ? "nowrap" : "wrap",
+      msOverflow: (this.props.viewMode ?? "PC") === "모바일" ? "auto" : "visible",
+      msCardFlex: (this.props.viewMode ?? "PC") === "모바일" ? "0 0 72%" : "1 1 calc(33.333% - 8px)",
+      bleedX: (this.props.viewMode ?? "PC") === "모바일" ? "-16px" : "calc(50% - 50vw)",
+      bleedW: (this.props.viewMode ?? "PC") === "모바일" ? "calc(100% + 32px)" : "100vw",
+      bleedPad: (this.props.viewMode ?? "PC") === "모바일" ? "24px" : "max(24px,calc(50vw - 360px))",
+      heroCtaDisplay: (this.props.viewMode ?? "PC") === "모바일" ? "none" : "flex",
+      shellMaxWidth: (this.props.viewMode ?? "PC") === "모바일" ? "430px" : "none",
+      shellShadow: (this.props.viewMode ?? "PC") === "모바일" ? "0 0 0 1px var(--Color-Border-Secondary)" : "none",
+      calcOpen: this.state.modal === "calc",
+      svcOpen: this.state.modal === "svc",
+      altOpen: this.state.modal === "alt",
+      openCalc: e => { if (e) e.preventDefault(); this.setState({ modal: "calc" }); },
+      openSvc: e => { if (e) e.preventDefault(); this.setState({ modal: "svc" }); },
+      openAlt: e => { if (e) e.preventDefault(); this.setState({ modal: "alt" }); },
+      closeModal: () => this.setState({ modal: null }),
+      stopClick: e => e.stopPropagation(),
+      calcTabs: CALC_PLANS.map((p, i) => ({
+        label: p.price.toLocaleString("ko-KR") + "원 플랜",
+        onClick: () => this.setState({ calcIdx: i }),
+        weight: i === this.state.calcIdx ? 700 : 500,
+        color: i === this.state.calcIdx ? "#1256f0" : "#8b93a3",
+        border: i === this.state.calcIdx ? "#1256f0" : "transparent"
+      })),
+      calcTitle: CALC_PLANS[this.state.calcIdx].title,
+      calcDesc: CALC_PLANS[this.state.calcIdx].desc,
+      calcMonthly: CALC_PLANS[this.state.calcIdx].price.toLocaleString("ko-KR") + "원 X " + CALC_PLANS[this.state.calcIdx].months + "회",
+      calcTotal: (CALC_PLANS[this.state.calcIdx].price * CALC_PLANS[this.state.calcIdx].months).toLocaleString("ko-KR") + "원",
+      svcTabs: SVC_PLANS.map((p, i) => ({
+        label: p.tab,
+        onClick: () => this.setState({ svcIdx: i }),
+        bg: i === this.state.svcIdx ? "#1256f0" : "#f4f6fa",
+        fg: i === this.state.svcIdx ? "#fff" : "#5a6373"
+      })),
+      svcType: SVC_PLANS[this.state.svcIdx].type,
+      svcDesc: SVC_PLANS[this.state.svcIdx].desc,
+      svcStaff: SVC_PLANS[this.state.svcIdx].staff.map(s => ({ name: s[0], detail: s[1], img: SVC_ICONS[s[0]] || "assets/ess-ritual.png" })),
+      svcGoods: SVC_PLANS[this.state.svcIdx].goods.map(s => ({ name: s[0], detail: s[1], img: SVC_ICONS[s[0]] || "assets/ess-ritual.png" })),
+      altItems: ALT_ITEMS,
+      ctaOpacity: this.state.showFloatingCta ? 1 : 0,
+      ctaTransform: this.state.showFloatingCta ? "translateY(0)" : "translateY(16px)",
+      callProps: { style: { background: "var(--Color-GrayScale-900)", color: "#fff", paddingLeft: 26, paddingRight: 26, boxShadow: "0 8px 20px rgba(0,0,0,.18)" } },
+      cats: PLANS.map(p => {
+        const on = p.label === cat;
+        return {
+          label: p.label,
+          props: {
+            selected: on,
+            onClick: () => this.setState({ cat: p.label }),
+            style: {
+              height: 40, padding: "0 18px", borderRadius: 9999, fontSize: 14,
+              background: on ? "var(--Color-Primary-600)" : "var(--Color-GrayScale-White)",
+              color: on ? "var(--Color-GrayScale-White)" : "var(--Color-Fg-Secondary)",
+              border: "1px solid " + (on ? "var(--Color-Primary-600)" : "var(--Color-Border-Secondary)"),
+              fontWeight: on ? 600 : 500
+            }
+          }
+        };
+      }),
+      prods: ((PLANS.find(p => p.label === cat) || PLANS[0]).items).map((it, i) => ({
+        name: it.name,
+        price: it.price,
+        cardPrice: it.cardPrice,
+        rank: String(i + 1),
+        link: PRODUCT_LINKS[it.name] || RENTAL_URL,
+        img: it.img || (PLANS.find(p => p.label === cat) || PLANS[0]).img
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

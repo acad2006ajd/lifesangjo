@@ -1,0 +1,8 @@
+/* Landing page layout guide — 1920px 기준. */
+:root{
+--Layout-Inner-Default:1024px;   /* 기본 이너박스 */
+--Layout-Inner-Narrow:750px;     /* 콘텐츠가 적거나 좁게 가져가야 할 때 */
+--Layout-Section-Padding_Y:140px;/* 섹션 상·하 여백 */
+--Layout-Gap-Title_to_content:68px; /* 메인 타이틀 ↔ 콘텐츠 */
+--Layout-Gap-Content:28px;       /* 콘텐츠 내부 기본 간격 (표·카드 등) */
+}
