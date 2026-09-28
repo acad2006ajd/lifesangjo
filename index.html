@@ -939,7 +939,7 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1056,&quot;height&quot;:1400},&quot;viewMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;PC&quot;,&quot;모바일&quot;],&quot;default&quot;:&quot;PC&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;레이아웃&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1056,&quot;height&quot;:1400},&quot;viewMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;자동&quot;,&quot;PC&quot;,&quot;모바일&quot;],&quot;default&quot;:&quot;자동&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;레이아웃&quot;}}">
 const HERO_SLIDES = [
   { title1: "100만 원 현금", title2: "사은품 받아가세요", sub: "제휴카드 적용 시 월 0원, 최신 가전까지 함께 받아요", img: "assets/combo-appliances.png", alt: "가전 결합 선물" },
   { title1: "15만원 노화방지 화장품", title2: "받아가세요", sub: "15만 원 상당의 화장품과 위로금 최대 50만 원 지급", img: "assets/pure-cosmetics.png", alt: "화장품 선물" }
@@ -1152,7 +1152,12 @@ class Component extends DCLogic {
       a.style.transform = covered ? "scale(.96)" : "none";
     };
     window.addEventListener("scroll", this.onStackScroll, { passive: true });
-    this.onFitResize = () => this.scheduleFit();
+    this.onFitResize = () => {
+      const narrow = window.innerWidth < 768;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+      this.scheduleFit();
+    };
+    this.setState({ narrow: window.innerWidth < 768 });
     window.addEventListener("resize", this.onFitResize);
     this.scheduleFit();
     setTimeout(() => this.scheduleFit(), 800);
@@ -1169,7 +1174,13 @@ class Component extends DCLogic {
   }
   componentDidUpdate(prevProps, prevState) {
     this.setupHeadlines();
-    if ((prevProps && prevProps.viewMode !== this.props.viewMode) || (prevState && prevState.variant !== this.state.variant)) this.scheduleFit();
+    if ((prevProps && prevProps.viewMode !== this.props.viewMode) || (prevState && (prevState.variant !== this.state.variant || prevState.narrow !== this.state.narrow))) this.scheduleFit();
+  }
+  isMob() {
+    const vm = this.props.viewMode;
+    if (vm === "모바일") return true;
+    if (vm === "PC") return false;
+    return this.state.narrow ?? (typeof window !== "undefined" && window.innerWidth < 768);
   }
   scheduleFit() {
     cancelAnimationFrame(this.fitRaf);
@@ -1351,7 +1362,7 @@ class Component extends DCLogic {
       }),
       heroCounter: (this.state.line + 1) + "/" + HERO_SLIDES.length,
       nextHeroSlide: () => this.setState(s => ({ line: (s.line + 1) % HERO_SLIDES.length })),
-      isMobileView: (this.props.viewMode ?? "PC") === "모바일",
+      isMobileView: this.isMob(),
       isVarA: this.state.variant === "a",
       isVarB: this.state.variant === "b",
       isVarC: this.state.variant === "c",
@@ -1374,27 +1385,27 @@ class Component extends DCLogic {
           try { const u = new URL(location.href); u.searchParams.set("v", k); history.replaceState(null, "", u); } catch (e) {}
         }
       })),
-      topLinksDisplay: (this.props.viewMode ?? "PC") === "모바일" ? "none" : "flex",
-      cardHeadMinH: (this.props.viewMode ?? "PC") === "모바일" ? "96px" : "clamp(112px,17cqi,132px)",
-      cardImgH: (this.props.viewMode ?? "PC") === "모바일" ? "112px" : "160px",
-      essentialCols: (this.props.viewMode ?? "PC") === "모바일" ? "repeat(3,minmax(0,1fr))" : "repeat(6,minmax(0,1fr))",
-      reviewCols: (this.props.viewMode ?? "PC") === "모바일" ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))",
+      topLinksDisplay: this.isMob() ? "none" : "flex",
+      cardHeadMinH: this.isMob() ? "96px" : "clamp(112px,17cqi,132px)",
+      cardImgH: this.isMob() ? "112px" : "160px",
+      essentialCols: this.isMob() ? "repeat(3,minmax(0,1fr))" : "repeat(6,minmax(0,1fr))",
+      reviewCols: this.isMob() ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))",
       cardBtnProps: { style: { width: "100%" } },
-      msWrap: (this.props.viewMode ?? "PC") === "모바일" ? "nowrap" : "wrap",
-      msOverflow: (this.props.viewMode ?? "PC") === "모바일" ? "auto" : "visible",
-      msCardFlex: (this.props.viewMode ?? "PC") === "모바일" ? "0 0 72%" : "1 1 calc(33.333% - 8px)",
-      refundCardFlex: (this.props.viewMode ?? "PC") === "모바일" ? "0 0 72%" : "0 0 calc((100% - 24px) / 3)",
-      stepGridCols: (this.props.viewMode ?? "PC") === "모바일" ? "repeat(3,minmax(0,1fr))" : "repeat(6,minmax(0,1fr))",
-      stepGridGap: (this.props.viewMode ?? "PC") === "모바일" ? "28px 10px" : "0 clamp(4px,1cqi,10px)",
-      stepNameSize: (this.props.viewMode ?? "PC") === "모바일" ? "14px" : "clamp(11px,1.9cqi,14px)",
-      stepDescSize: (this.props.viewMode ?? "PC") === "모바일" ? "12px" : "clamp(10px,1.7cqi,13px)",
-      refundJustify: (this.props.viewMode ?? "PC") === "모바일" ? "flex-start" : "center",
-      bleedX: (this.props.viewMode ?? "PC") === "모바일" ? "-16px" : "calc(50% - 50vw)",
-      bleedW: (this.props.viewMode ?? "PC") === "모바일" ? "calc(100% + 32px)" : "100vw",
-      bleedPad: (this.props.viewMode ?? "PC") === "모바일" ? "24px" : "max(24px,calc(50vw - 360px))",
-      heroCtaDisplay: (this.props.viewMode ?? "PC") === "모바일" ? "none" : "flex",
-      shellMaxWidth: (this.props.viewMode ?? "PC") === "모바일" ? "430px" : "none",
-      shellShadow: (this.props.viewMode ?? "PC") === "모바일" ? "0 0 0 1px var(--Color-Border-Secondary)" : "none",
+      msWrap: this.isMob() ? "nowrap" : "wrap",
+      msOverflow: this.isMob() ? "auto" : "visible",
+      msCardFlex: this.isMob() ? "0 0 72%" : "1 1 calc(33.333% - 8px)",
+      refundCardFlex: this.isMob() ? "0 0 72%" : "0 0 calc((100% - 24px) / 3)",
+      stepGridCols: this.isMob() ? "repeat(3,minmax(0,1fr))" : "repeat(6,minmax(0,1fr))",
+      stepGridGap: this.isMob() ? "28px 10px" : "0 clamp(4px,1cqi,10px)",
+      stepNameSize: this.isMob() ? "14px" : "clamp(11px,1.9cqi,14px)",
+      stepDescSize: this.isMob() ? "12px" : "clamp(10px,1.7cqi,13px)",
+      refundJustify: this.isMob() ? "flex-start" : "center",
+      bleedX: this.isMob() ? "-16px" : "calc(50% - 50vw)",
+      bleedW: this.isMob() ? "calc(100% + 32px)" : "100vw",
+      bleedPad: this.isMob() ? "24px" : "max(24px,calc(50vw - 360px))",
+      heroCtaDisplay: this.isMob() ? "none" : "flex",
+      shellMaxWidth: this.isMob() ? "430px" : "none",
+      shellShadow: this.isMob() ? "0 0 0 1px var(--Color-Border-Secondary)" : "none",
       calcOpen: this.state.modal === "calc",
       svcOpen: this.state.modal === "svc",
       altOpen: this.state.modal === "alt",
