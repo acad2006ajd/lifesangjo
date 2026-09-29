@@ -340,11 +340,14 @@
       </div>
     </section>
 
-    <section style="position:relative;display:flex;flex-direction:column;align-items:center;padding:{{ dRibbonTopPad }} clamp(20px,3.4cqi,28px) 28px;border:1px solid var(--Color-Border-Secondary);border-radius:24px;background:var(--Color-GrayScale-White);text-align:center">
-      <span style="position:absolute;top:-1px;left:24px;display:flex;flex-direction:column;align-items:center;gap:2px;width:60px;padding:10px 0 16px;background:var(--Color-Primary-600);color:var(--Color-GrayScale-White);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)">
-        <span style="font:var(--Font-Weight-Medium) 10px/1.3 var(--Font-Family-Base);letter-spacing:-0.02em">기간한정</span>
-        <span style="font:var(--Font-Weight-Bold) 13px/1.2 var(--Font-Family-Base);letter-spacing:0.02em">EVENT</span>
+    <div aria-hidden="true" style="position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:0;margin:-8px 0">
+      <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary);box-shadow:0 6px 16px rgba(31,36,41,.08)">
+        <svg viewBox="0 0 20 20" fill="none" style="width:18px;height:18px"><path d="M10 4v12M4 10h12" stroke="var(--Color-Primary-600)" stroke-width="2.4" stroke-linecap="round"></path></svg>
       </span>
+    </div>
+
+    <section style="position:relative;display:flex;flex-direction:column;align-items:center;padding:{{ dRibbonTopPad }} clamp(20px,3.4cqi,28px) 28px;border:1px solid var(--Color-Border-Secondary);border-radius:24px;background:var(--Color-GrayScale-White);text-align:center">
+      
       <p data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(22px,4.2cqi,28px)/1.3 var(--Font-Family-Base);letter-spacing:-0.03em;color:var(--Color-Fg-Primary);word-break:keep-all">장례 위로금 <span style="color:var(--Color-Primary-600)">최대 50만 원</span> 지급</p>
       <p style="margin:8px 0 0;font:var(--Font-Weight-Regular) clamp(13px,2.2cqi,15px)/1.5 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);word-break:keep-all">상조 업계 유일 현금으로 지급</p>
       <img src="assets/consolation-envelope-v2.png" alt="아정당 장례 위로금 봉투" style="display:block;width:100%;height:clamp(200px,36cqi,280px);object-fit:contain;margin:clamp(16px,2.6cqi,22px) 0 0">
