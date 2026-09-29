@@ -401,7 +401,7 @@
     <sc-if value="{{ cIsCombo }}" hint-placeholder-val="{{ false }}">
     <section style="display:flex;flex-direction:column;align-items:center;padding:clamp(24px,4cqi,36px) clamp(20px,3.4cqi,28px) 22px;border:1px solid var(--Color-Border-Secondary);border-radius:24px;background:var(--Color-GrayScale-White);text-align:center">
       
-      <p data-hm-skip="1" style="margin: 6px 0 0; font: var(--Font-Weight-Bold) clamp(22px,4.2cqi,28px)/1.3 var(--Font-Family-Base); letter-spacing: -0.03em; color: var(--Color-Fg-Primary); word-break: keep-all; margin-bottom: 10px">최신 인기 가전</p>
+      <p data-hm-skip="1" style="margin: 6px 0 0; font: var(--Font-Weight-Bold) clamp(22px,4.2cqi,28px)/1.3 var(--Font-Family-Base); letter-spacing: -0.03em; color: var(--Color-Fg-Primary); word-break: keep-all; margin-bottom: 10px">최신 인기 가전 프로모션</p>
       <p data-hm-skip="1" style="margin: 0; font: var(--Font-Weight-Medium) clamp(14px,2.4cqi,16px)/1.4 var(--Font-Family-Base); color: var(--Color-Fg-Secondary); font-weight: 400; font-size: clamp(13px,1.8cqw,16px)">LG · 삼성 · 다이슨 등</p><div style="display:flex;align-items:center;justify-content:center;width:100%;height:clamp(200px,36cqi,280px);margin-top:clamp(16px,2.6cqi,22px)">
         <img src="assets/combo-appliances-v3.png" alt="가전 결합 제품" style="display:block;width:100%;height:100%;object-fit:contain;transform:scale(1.12)">
       </div>
@@ -417,6 +417,21 @@
   </div>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
+    <div style="width: 100%; text-align: center">
+      <img src="assets/refund-cycle.png" alt="" style="display: block; width: 120px; height: auto; margin: 0 auto 16px; margin-top: 0px"><span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">혹시라도</span>
+      <h3 data-hm-skip="1" style="margin: 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; margin-top: 28px">마음이 바뀌면,<br>언제든지 해지 가능합니다</h3>
+      <img src="assets/refund-terms.png" alt="제14조 계약의 해지 및 해약환급금 약관" style="display:block;width:100%;max-width:640px;height:auto;margin:28px auto 0;border-radius:14px"><p style="max-width:640px;margin:10px auto 0;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);text-align:right">*아정당 상조 계약서</p><p style="margin:16px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">내신 상조 금액 전액 <strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">100% 환급</strong>까지 해드려요</p>
+      
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;max-width:440px;margin:56px auto 0">
+      <svg width="30" height="20" viewBox="0 0 30 20" fill="none" aria-hidden="true" style="animation:v3-chev 1.6s ease-in-out infinite">
+        <path d="M3 2l12 8 12-8" stroke="var(--Color-Primary-600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M3 10l12 8 12-8" stroke="var(--Color-Primary-600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <a href="#apply" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border-radius: 12px; background: var(--Color-Primary-600); color: var(--Color-GrayScale-White); font: var(--Font-Weight-Bold) 17px/1 var(--Font-Family-Base); letter-spacing: -0.02em">내 혜택 보러가기</a>
+      <p style="margin: 12px 0 0; font: var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); margin-top: 0px">*아정99 플랜은 중도 해지 시 해지환급율이 적용됩니다<br>*가전 결합 플랜은 중도 해지 시 렌탈 위약금이 발생합니다</p>
+    </div>
+  </section><section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
     <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">가입 즉시 사용 가능한<br><span style="color: var(--Color-Primary-600);">멤버십 혜택</span><span style="letter-spacing: -0.02em; color: var(--Color-Fg-Primary);">까지</span></h2><p style="margin:14px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,18px)/1.7 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">가족 · 지인까지 함께 이용</p>
 
     
@@ -493,22 +508,7 @@
     
   </section>
 
-  <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <div style="width: 100%; text-align: center">
-      <img src="assets/refund-cycle.png" alt="" style="display: block; width: 120px; height: auto; margin: 0 auto 16px; margin-top: 0px"><span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">혹시라도</span>
-      <h3 data-hm-skip="1" style="margin: 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; margin-top: 28px">마음이 바뀌면,<br>언제든지 해지 가능합니다</h3>
-      <img src="assets/refund-terms.png" alt="제14조 계약의 해지 및 해약환급금 약관" style="display:block;width:100%;max-width:640px;height:auto;margin:28px auto 0;border-radius:14px"><p style="max-width:640px;margin:10px auto 0;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);text-align:right">*아정당 상조 계약서</p><p style="margin:16px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">내신 상조 금액 전액 <strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">100% 환급</strong>까지 해드려요</p>
-      
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:22px;max-width:440px;margin:56px auto 0">
-      <svg width="30" height="20" viewBox="0 0 30 20" fill="none" aria-hidden="true" style="animation:v3-chev 1.6s ease-in-out infinite">
-        <path d="M3 2l12 8 12-8" stroke="var(--Color-Primary-600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-        <path d="M3 10l12 8 12-8" stroke="var(--Color-Primary-600)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
-      <a href="#apply" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border-radius: 12px; background: var(--Color-Primary-600); color: var(--Color-GrayScale-White); font: var(--Font-Weight-Bold) 17px/1 var(--Font-Family-Base); letter-spacing: -0.02em">내 혜택 보러가기</a>
-      <p style="margin: 12px 0 0; font: var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); margin-top: 0px">*아정99 플랜은 중도 해지 시 해지환급율이 적용됩니다<br>*가전 결합 플랜은 중도 해지 시 렌탈 위약금이 발생합니다</p>
-    </div>
-  </section>
+  
 
   
 
@@ -537,16 +537,19 @@
     <span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">아정당 상조는</span>
     <h3 data-hm-skip="1" style="margin: 28px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; color: var(--Color-Fg-Primary)">119만 원으로 장례가 가능합니다</h3>
     <p style="margin:24px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">전국 무빈소 가능 장례식장을 미리 확인하고,<br>필요한 순간 바로 연결해드립니다</p>
-    <div style="max-width:520px;margin:48px auto 0">
-      <img src="assets/price-compare-v2.png" alt="기존 상조 1,500만 원 대비 아정당 상조 119만 원" style="display:block;width:100%;height:auto;border-radius:16px">
-      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:6px">
-        <div>
-          <p style="margin:0;font:var(--Font-Weight-Bold) clamp(15px,2.6cqi,19px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">기존 상조</p>
-        </div>
-        <div>
-          <p style="margin:0;font:var(--Font-Weight-Bold) clamp(15px,2.6cqi,19px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">아정당 상조</p>
-          <p style="margin:6px 0 0;font:var(--Font-Weight-Regular) clamp(12px,2cqi,14px)/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">무빈소 장례</p>
-        </div>
+    <div data-no-fit="1" style="max-width:480px;margin:48px auto 0">
+      <img src="assets/price-compare-v4.png" alt="평균 장례비용 1,200만 원 대비 아정당 상조 119만 원부터" style="display:block;width:100%;height:auto">
+      <div style="display:grid;grid-template-columns:12fr 32.3fr 11.8fr 36.4fr 7.5fr;margin-top:clamp(4px,1cqi,8px)">
+      <div style="grid-column:2;display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap">
+        <span style="font:var(--Font-Weight-Bold) clamp(17px,3cqi,22px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">평균 장례비용</span>
+      </div>
+      <div style="grid-column:4;display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap">
+        <span style="font:var(--Font-Weight-Bold) clamp(17px,3cqi,22px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">아정당 상조</span>
+      </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;margin-top:clamp(20px,3cqi,28px);text-align:left">
+        <span style="font: var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); text-align: right">*무빈소장례상품 기준 (2026. 08)</span>
+        <span style="font: var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); text-align: right">*평균 장례비용 머니투데이 발췌 (2026.05.02)</span>
       </div>
     </div>
   </section>
