@@ -1459,11 +1459,11 @@ class Component extends DCLogic {
       isApplyPure: this.state.applyType === "pure",
       pickApplyCombo: () => this.setState({ applyType: "combo" }),
       pickApplyPure: () => this.setState({ applyType: "pure" }),
-      formRowGap: (this.props.viewMode ?? "PC") === "모바일" ? "28px" : "32px",
-      formPairCols: (this.props.viewMode ?? "PC") === "모바일" ? "minmax(0,1fr)" : "minmax(0,1fr) minmax(0,1fr)",
-      formLabelCols: (this.props.viewMode ?? "PC") === "모바일" ? "minmax(0,1fr)" : "88px minmax(0,1fr)",
-      formLabelColsR: (this.props.viewMode ?? "PC") === "모바일" ? "minmax(0,1fr)" : "auto minmax(0,1fr)",
-      formProdCols: (this.props.viewMode ?? "PC") === "모바일" ? "minmax(0,1fr)" : "minmax(0,1fr) minmax(0,1fr)",
+      formRowGap: this.isMob() ? "28px" : "32px",
+      formPairCols: this.isMob() ? "minmax(0,1fr)" : "minmax(0,1fr) minmax(0,1fr)",
+      formLabelCols: this.isMob() ? "minmax(0,1fr)" : "88px minmax(0,1fr)",
+      formLabelColsR: this.isMob() ? "minmax(0,1fr)" : "auto minmax(0,1fr)",
+      formProdCols: this.isMob() ? "minmax(0,1fr)" : "minmax(0,1fr) minmax(0,1fr)",
       interests: INTERESTS.map((label, i) => {
         const on = this.state.interest === i;
         return {
