@@ -63,6 +63,7 @@
   body{margin:0;background:var(--Color-GrayScale-050);font-family:var(--Font-Family-Base);overflow-x:clip}
   a{color:var(--Color-Primary-600);text-decoration:none}
   a:hover{color:var(--Color-Primary-700)}
+  h2[data-hm-skip="1"],h3[data-hm-skip="1"]{white-space:nowrap !important;text-wrap-mode:nowrap !important}
 </style>
 </helmet>
 
@@ -152,11 +153,11 @@
 
 <div style="max-width:1056px;margin:0 auto;padding:0 16px 132px">
 
-  <section style="position:relative;border-radius:20px;overflow:hidden;margin:12px 0 0;width:100%;aspect-ratio:2.8/1;background:#080f24">
+  <section style="position:relative;border-radius:20px;overflow:hidden;margin:12px 0 0;width:100%;aspect-ratio:2.2/1;background:#080f24">
     <video ref="{{ videoRef }}" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%">
       <source src="assets/hero-video.mp4" type="video/mp4">
     </video>
-    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,15,36,.75) 0%,rgba(8,15,36,.35) 50%,rgba(8,15,36,.1) 100%)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,15,36,.4) 0%,rgba(8,15,36,0) 32%,rgba(8,15,36,0) 100%)"></div>
     <img src="assets/hero-logo.png" alt="아정당 상조" style="position:absolute;left:5%;top:9%;z-index:2;height:clamp(14px,3.6cqi,24px);width:auto;object-fit:contain">
     <div style="position:absolute;inset:0;display:{{ heroCtaDisplay }};flex-direction:column;justify-content:flex-end;padding:16px 16px 20px;color:#fff">
       <div style="display:inline-flex;align-items:stretch;flex-direction:column;gap:clamp(6px,1.2cqi,10px);width:min(34cqi,268px)">
@@ -254,7 +255,7 @@
 
   <section style="display:none">
     
-    <h2 data-hm-skip="1" style="margin:20px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">즉시 이용 가능한<br>인기 가전제품</h2>
+    <h2 data-hm-skip="1" style="margin:20px 0 0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">즉시 이용 가능한<br>인기 가전제품</h2>
     
 
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:32px">
@@ -313,7 +314,7 @@
       <span style="font:var(--Font-Weight-Medium) 11px/1.3 var(--Font-Family-Base);letter-spacing:-0.02em">기간한정</span>
       <span style="font:var(--Font-Weight-Bold) 15px/1.2 var(--Font-Family-Base);letter-spacing:0.02em">EVENT</span>
     </span>
-    <h2 data-hm-skip="1" style="margin: 8px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; word-break: keep-all; font-size: min(34px,8.2cqi); white-space: nowrap">월 100원으로<br><span style="color: var(--Color-Primary-600);">15만 원 받아가세요</span></h2>
+    <h2 data-hm-skip="1" style="margin: 8px 0 0; font: var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; word-break: keep-all; font-size: min(34px,8.2cqi); white-space: nowrap">월 100원으로<br><span style="color: var(--Color-Primary-600);">15만 원 받아가세요</span></h2>
     <p style="margin:0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">재고 소진 시 조기 마감될 수 있습니다</p>
   </section>
 
@@ -551,8 +552,8 @@
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
     <div style="width: 100%; text-align: center">
       <img src="assets/refund-cycle.png" alt="" style="display: block; width: 120px; height: auto; margin: 0 auto 16px; margin-top: 0px"><span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">혹시라도</span>
-      <h3 data-hm-skip="1" style="margin: 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; margin-top: 28px">마음이 바뀌면,<br>언제든지 해지 가능합니다</h3>
-      <img src="assets/refund-terms.png" alt="제14조 계약의 해지 및 해약환급금 약관" style="display:block;width:100%;max-width:640px;height:auto;margin:28px auto 0;border-radius:14px"><p style="max-width:640px;margin:10px auto 0;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);text-align:right">*아정당 상조 계약서</p><p style="margin:16px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">내신 상조 금액 전액 <strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">100% 환급</strong>까지 해드려요</p>
+      <h3 data-hm-skip="1" style="margin: 0; font: var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; margin-top: 28px">마음이 바뀌면,<br>언제든지 해지 가능합니다</h3>
+      <img src="assets/refund-terms.png" alt="제14조 계약의 해지 및 해약환급금 약관" style="display:block;width:100%;max-width:640px;height:auto;margin:28px auto 0;border-radius:14px"><p style="max-width:640px;margin:10px auto 0;font:var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary);text-align:right">*아정당 상조 계약서</p><p style="margin:16px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary)">내신 금액 전액 <strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">100% 환급</strong>까지 해드려요</p>
       
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;gap:22px;max-width:440px;margin:56px auto 0">
@@ -564,7 +565,7 @@
       <p style="margin: 12px 0 0; font: var(--Font-Weight-Regular) 12px/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); margin-top: 0px"><span style="color: rgb(139, 149, 161); font-family: &quot;Pretendard Variable&quot;, Pretendard, -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11.5px; letter-spacing: -0.28px;">* 19,900~79,900원 플랜은 해지 시 상조 납입금 전액 환급 기준이 적용됩니다.<br>* 가전 렌탈료는 환급 대상이 아니며, 렌탈 약정 기간 전 해지 시 잔여 렌탈료가 부과될 수 있습니다.</span></p>
     </div>
   </section><section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">가입 즉시 사용 가능한<br><span style="color: var(--Color-Primary-600);">멤버십 혜택</span><span style="letter-spacing: -0.02em; color: var(--Color-Fg-Primary);">까지</span></h2><p style="margin:14px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,18px)/1.7 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">가족 · 지인까지 함께 이용</p>
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">가입 즉시 사용 가능한<br><span style="color: var(--Color-Primary-600);">멤버십 혜택</span><span style="letter-spacing: -0.02em; color: var(--Color-Fg-Primary);">까지</span></h2><p style="margin:14px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,18px)/1.7 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">가족 · 지인까지 함께 이용</p>
 
     
 
@@ -615,7 +616,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.5 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty">만기 유지 시<br><span style="color: var(--Color-Primary-600);">원하시는 방법</span>으로 돌려드려요</h2>
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.5 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty">만기 유지 시<br><span style="color: var(--Color-Primary-600);">원하시는 방법</span>으로 돌려드려요</h2>
 
     <div style="display: flex; gap: 12px; margin-top: 40px; text-align: center; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 6px; justify-content: {{ refundJustify }}; max-width: 760px; margin-left: auto; margin-right: auto">
       <div style="flex:{{ refundCardFlex }};scroll-snap-align:start;display:flex;flex-direction:column;padding:20px;border-radius:18px;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Border-Secondary)">
@@ -651,7 +652,7 @@
     
     
     <p style="margin: 0; font: var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); font-size: clamp(19px,4cqi,26px); font-weight: 700; margin-top: 54px">슬픔을 이용하는 장례 시장,</p>
-    <h2 data-hm-skip="1" style="margin: 12px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); margin-top: 0px; font-size: min(32px,7.8cqi)">아정당이 바꾸기로 했습니다</h2>
+    <h2 data-hm-skip="1" style="margin: 12px 0 0; font: var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); margin-top: 0px; font-size: min(32px,5.4cqi)">아정당이 바꾸기로 했습니다</h2>
     <div style="position:relative;max-width:520px;margin:28px auto 0;border-radius:20px;overflow:hidden">
       <img src="assets/ceo-portrait.png" alt="아정당 상조 오병선 대표" style="display:block;width:100%;height:auto">
       <div style="position:absolute;right:16px;bottom:16px;padding:12px 18px;border-radius:12px;background:rgba(15,18,22,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-align:right">
@@ -667,7 +668,7 @@
     <div class="sr-line" style="width: 2px; height: clamp(56px,9cqi,100px); background: linear-gradient(180deg,#0F0C08EB,#0F0C0800); margin: 0 auto clamp(32px,5cqi,56px)"></div>
     
     <span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">아정당 상조는</span>
-    <h3 data-hm-skip="1" style="margin: 28px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; color: var(--Color-Fg-Primary)">119만 원으로 장례가 가능합니다</h3>
+    <h3 data-hm-skip="1" style="margin: 28px 0 0; font: var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base); letter-spacing: -0.02em; text-wrap: pretty; color: var(--Color-Fg-Primary)">119만 원으로 장례가 가능합니다</h3>
     <p style="margin:24px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">전국 무빈소 가능 장례식장을 미리 확인하고,<br>필요한 순간 바로 연결해드립니다</p>
     <div data-no-fit="1" style="max-width:480px;margin:48px auto 0">
       <img src="assets/price-compare-v4.png" alt="평균 장례비용 1,200만 원 대비 아정당 상조 119만 원부터" style="display:block;width:100%;height:auto">
@@ -687,7 +688,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">허례허식 없이,<br><span style="color:var(--Color-Primary-600)">장례 필수 항목만 담았어요</span></h3>
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">허례허식 없이,<br><span style="color:var(--Color-Primary-600)">장례 필수 항목만 담았어요</span></h3>
     <div style="display:grid;grid-template-columns:{{ essentialCols }};gap:clamp(8px,1.4cqi,12px);max-width:760px;margin:36px auto 0">
       <sc-for list="{{ essentials }}" as="e" hint-placeholder-count="12">
         <div style="display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--Color-GrayScale-050);border:1px solid var(--Color-Border-Secondary);border-radius:18px;padding:16px 10px">
@@ -699,7 +700,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">싸다고&nbsp;품질이 떨어지지 않습니다</h3>
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">싸다고&nbsp;품질이 떨어지지 않습니다</h3>
     <p style="margin:18px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.7 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">거품은 걷어내되, 마지막 가시는 길의 격(格)은<br>최고 수준 그대로 지켜드립니다</p>
     <img src="assets/awards-v2.png" alt="2021~2025 대한민국 고객만족지수 1위 상장" style="display:block;width:100%;max-width:760px;height:auto;margin:36px auto 0">
     <div style="display:flex;align-items:center;justify-content:center;gap:clamp(24px,5cqi,56px);max-width:520px;margin:28px auto 0;padding:22px 24px;border-radius:16px;background:var(--Color-GrayScale-050)">
@@ -716,7 +717,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">대통령 국가장 경력팀이<br>직접 진행합니다</h3><div style="max-width:520px;margin:32px auto 0">
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">대통령 국가장 경력팀이<br>직접 진행합니다</h3><div style="max-width:520px;margin:32px auto 0">
       <div style="position:relative;border-radius:20px;overflow:hidden">
         <img src="assets/director-photo.png" alt="김인식 총괄 장례지도사" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
         <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;background:linear-gradient(to top,rgba(10,13,18,.82) 0%,rgba(10,13,18,.5) 60%,rgba(10,13,18,0) 100%);text-align:left">
@@ -731,7 +732,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">모든 장례지도사가<br><span style="color: var(--Color-Primary-600);">처음부터 끝까지</span><span style="letter-spacing: -0.02em; color: var(--Color-Fg-Primary);"> 책임집니다</span></h2>
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em">모든 장례지도사가<br><span style="color: var(--Color-Primary-600);">처음부터 끝까지</span><span style="letter-spacing: -0.02em; color: var(--Color-Fg-Primary);"> 책임집니다</span></h2>
     <div style="display:grid;grid-template-columns:{{ stepGridCols }};align-items:stretch;gap:{{ stepGridGap }};max-width:760px;margin:44px auto 0">
       <sc-for list="{{ funeralSteps }}" as="s" hint-placeholder-count="6">
         <div style="display:flex;flex-direction:column;align-items:center;gap:6px;height:100%">
@@ -753,7 +754,7 @@
   </section>
 
   <section style="margin: 0 {{ bleedX }}; width: {{ bleedW }}; padding: clamp(48px,11cqi,140px) {{ bleedPad }} 0; background: var(--Color-GrayScale-White); text-align: center">
-    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty;color:var(--Color-Fg-Primary)">이게 가능한 이유는<br>직영 영업조직이 없기 때문입니다</h2>
+    <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty;color:var(--Color-Fg-Primary)">이게 가능한 이유는<br>직영 영업조직이 없기 때문입니다</h2>
     <div style="margin:28px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty"><p data-pm-slice="0 0 []" style="color: #575E64">한 건마다 나가던 영업수당을<br><b>고객님 혜택</b>으로 돌려드려요</p></div>
     <div style="max-width:520px;margin:60px auto 0">
       <img src="assets/no-sales.png" alt="아정당 › 중간·영업 없음 › 고객" style="display:block;width:100%;height:auto">
@@ -780,7 +781,7 @@
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
     <span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">아정당은</span>
-    <h3 style="margin: 28px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em">속일 수 없는 <span style="color:var(--Color-Primary-600)">구조</span>입니다</h3>
+    <h3 style="margin: 28px 0 0; font: var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em">속일 수 없는 <span style="color:var(--Color-Primary-600)">구조</span>입니다</h3>
     <p style="margin:28px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);color:var(--Color-Fg-Secondary);letter-spacing:-0.02em">인터넷·가전렌탈·휴대폰·이사·청소부터<br>상조까지 여러 생활 서비스를 함께 운영합니다.</p>
     <img src="assets/life-services.png" alt="아정당 생활서비스" style="display:block;width:100%;max-width:520px;height:auto;margin:36px auto 0">
     <p style="margin:36px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">한 번의 실망으로 <strong style="font-weight:var(--Font-Weight-Bold)">브랜드의 전체 신뢰를 잃기 때문에</strong></p>
@@ -789,7 +790,7 @@
 
   <section style="margin: 0 {{ bleedX }}; width: {{ bleedW }}; padding: clamp(48px,11cqi,140px) {{ bleedPad }} 0; background: var(--Color-GrayScale-White); text-align: center">
     <span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">그렇기에</span>
-    <h3 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty;color:var(--Color-Fg-Primary)">지금까지 단 한 번도<br>추가 비용 요구는 없었습니다</h3>
+    <h3 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-wrap:pretty;color:var(--Color-Fg-Primary)">지금까지 단 한 번도<br>추가 비용 요구는 없었습니다</h3>
     <img src="assets/no-extra-cost.png" alt="아정라이프케어 장례상품 유의사항 — 회원의 상품 추가 요청이 없는 한 추가 비용은 발생되지 않습니다" style="display:block;width:100%;max-width:560px;height:auto;margin:32px auto 0"><p style="margin: 12px 0 0; font: var(--Font-Weight-Regular) clamp(11px,2.2cqi,12px)/1.6 var(--Font-Family-Base); color: var(--Color-Fg-Tertiary); width: 100%; max-width: 560px; margin-left: auto; margin-right: auto; text-align: right">※ 아정당 상조 계약서</p><p style="margin:24px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.8 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">영업 수수료, 용품 강매, 수고비 등<br>계약한 금액, 그대로입니다</p>
 
     
@@ -816,7 +817,7 @@
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
     <div>
       <span style="display: inline-block; font: var(--Font-Weight-Bold) 22px/1 var(--Font-Family-Base); color: #1F2429; border-bottom: 2px solid var(--Color-GrayScale-900); padding-bottom: 8px">혹시?</span>
-      <h3 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">이미 가입한 상조가<br><span style="color:var(--Color-Primary-600)">있으신가요?</span></h3>
+      <h3 data-hm-skip="1" style="margin:28px 0 0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">이미 가입한 상조가<br><span style="color:var(--Color-Primary-600)">있으신가요?</span></h3>
       <p style="margin: 56px 0 0; font: var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.75 var(--Font-Family-Base); letter-spacing: -0.02em; margin-bottom: 0px; margin-top: 28px">기존 비싼 상조는 냈던 돈&nbsp;<strong style="color: var(--Color-Primary-600); font-weight: var(--Font-Weight-Bold);">환급 받고,<br>장례는 저렴한 아정당</strong>으로 치르세요.</p><div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:start;gap:12px;max-width:520px;margin:56px auto 0">
         <div style="position:relative">
           <img src="assets/flower.png" alt="" style="position:absolute;left:50%;top:0;transform:translate(-50%,-52%);width:86px;height:auto;z-index:3;filter:drop-shadow(0 8px 16px rgba(20,30,60,.14))">
@@ -861,7 +862,7 @@
   
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.2cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">365일 24시간, <span style="color:var(--Color-Primary-600)">전화 한 통이면 됩니다</span></h3>
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">365일 24시간,<br><span style="color:var(--Color-Primary-600)">전화 한 통이면 됩니다</span></h3>
     <img src="assets/branch-map.png" alt="전국 지부 지도" style="display:block;width:100%;max-width:420px;height:auto;margin:28px auto 0">
     <p style="margin:24px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">전국 어디서든,<br><span style="color:var(--Color-Primary-600)">가장 가까운 지부 장례지도사 출동</span></p>
     <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:520px;margin:36px auto 0">
@@ -875,7 +876,7 @@
       <span style="font:var(--Font-Weight-Bold) clamp(15px,2.8cqi,18px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-GrayScale-900)">실제 고객 후기</span>
       <span style="width:100%;max-width:150px;height:2px;background:var(--Color-GrayScale-900)"></span>
     </div>
-    <h3 data-hm-skip="1" style="margin:28px 24px 0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-align:center">믿고 선택해주셔서<br><span style="color:var(--Color-Primary-600)">감사합니다</span></h3>
+    <h3 data-hm-skip="1" style="margin:28px 24px 0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;text-align:center">믿고 선택해주셔서<br><span style="color:var(--Color-Primary-600)">감사합니다</span></h3>
 
     <div style="display:grid;grid-template-columns:{{ reviewCols }};gap:12px;max-width:760px;margin:40px auto 0;padding:0 24px">
       <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="4">
@@ -894,7 +895,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;text-align:center">자주 묻는 질문</h3>
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;text-align:center">자주 묻는 질문</h3>
     <div style="margin-top:28px">
       <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="9">
         <div style="border-bottom:1px solid var(--Color-Border-Tertiary)">
@@ -912,8 +913,8 @@
 
   <section id="apply" data-no-fit="1" style="margin:clamp(48px,11cqi,140px) {{ bleedX }} 0;width:{{ bleedW }};padding:clamp(48px,8cqi,96px) {{ bleedPad }};background:var(--Color-GrayScale-050)">
     <div style="text-align:center">
-      <p data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(22px,4.4cqi,30px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Primary-600)">상조의 새로운 기준</p>
-      <h3 data-hm-skip="1" style="margin:4px 0 0;font:var(--Font-Weight-Bold) clamp(22px,4.4cqi,30px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">아정당 상조, 지금 바로 신청하세요</h3>
+      <p data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(30px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Primary-600)">상조의 새로운 기준</p>
+      <h3 data-hm-skip="1" style="margin:4px 0 0;font:var(--Font-Weight-Bold) min(30px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">아정당 상조, 지금 바로 신청하세요</h3>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:{{ formRowGap }};max-width:800px;margin:clamp(32px,5cqi,48px) auto 0">
@@ -1449,7 +1450,7 @@ class Component extends DCLogic {
     this.fitRaf = requestAnimationFrame(() => requestAnimationFrame(() => this.fitText()));
   }
   fitText() {
-    const root = document.getElementById("dc-root");
+    const root = document.getElementById("dc-root") || document.body;
     if (!root) return;
     const countLines = el => {
       const r = document.createRange();
@@ -1657,7 +1658,7 @@ class Component extends DCLogic {
         { img: "assets/conv-2.png", name: "입주청소" },
         { img: "assets/conv-1.png", name: "크루즈" }
       ],
-      convCardW: this.isMob() ? "38%" : "calc((100% - 30px) / 4.3)",
+      convCardW: (this.props.viewMode ?? "PC") === "모바일" ? "38%" : "calc((100% - 30px) / 4.3)",
       isVarD: this.state.variant === "d",
       dMoreOpen: !!this.state.dMore,
       dMoreRows: this.state.dMore ? "1fr" : "0fr",
