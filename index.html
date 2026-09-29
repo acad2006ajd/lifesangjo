@@ -424,10 +424,10 @@
     </div>
     <div style="padding-top:clamp(24px,4cqi,36px)">
       <sc-if value="{{ cIsPure }}" hint-placeholder-val="{{ true }}">
-        <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">월 100원 내고<br><span style="color:var(--Color-Primary-600)">15만 원 화장품</span> 받아가세요!</h2>
+        <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6.6cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">월 100원 내고<br><span style="color:var(--Color-Primary-600)">15만 원 화장품</span> 받아가세요!</h2>
       </sc-if>
       <sc-if value="{{ cIsCombo }}" hint-placeholder-val="{{ false }}">
-        <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color:var(--Color-Primary-600)">최대 100만 원</span> 받아가세요!</h2>
+        <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6.6cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color:var(--Color-Primary-600)">최대 100만 원</span> 받아가세요!</h2>
       </sc-if>
     </div>
   </section>
@@ -510,10 +510,10 @@
 
   <div data-no-fit="1" style="padding:clamp(24px,4cqi,36px) 24px 0;text-align:center">
     <sc-if value="{{ cIsPure }}" hint-placeholder-val="{{ true }}">
-      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">월 100원 내고<br><span style="color: var(--Color-Primary-600);">15만 원 화장품</span> 받아가세요</h2>
+      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6.6cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">월 100원 내고<br><span style="color: var(--Color-Primary-600);">15만 원 화장품</span> 받아가세요</h2>
     </sc-if>
     <sc-if value="{{ cIsCombo }}" hint-placeholder-val="{{ false }}">
-      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color: var(--Color-Primary-600);">최대 100만 원</span> 받아가세요</h2>
+      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6.6cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color: var(--Color-Primary-600);">최대 100만 원</span> 받아가세요</h2>
     </sc-if>
   </div>
 
@@ -1658,7 +1658,7 @@ class Component extends DCLogic {
         { img: "assets/conv-2.png", name: "입주청소" },
         { img: "assets/conv-1.png", name: "크루즈" }
       ],
-      convCardW: (this.props.viewMode ?? "PC") === "모바일" ? "38%" : "calc((100% - 30px) / 4.3)",
+      convCardW: this.isMob() ? "38%" : "calc((100% - 30px) / 4.3)",
       isVarD: this.state.variant === "d",
       dMoreOpen: !!this.state.dMore,
       dMoreRows: this.state.dMore ? "1fr" : "0fr",
