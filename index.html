@@ -651,7 +651,7 @@
     
     
     <p style="margin: 0; font: var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.6 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); font-size: clamp(19px,4cqi,26px); font-weight: 700; margin-top: 54px">슬픔을 이용하는 장례 시장,</p>
-    <h2 data-hm-skip="1" style="margin: 12px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); margin-top: 0px; font-size: 32px">아정당이 바꾸기로 했습니다</h2>
+    <h2 data-hm-skip="1" style="margin: 12px 0 0; font: var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base); letter-spacing: -0.02em; color: var(--Color-Fg-Primary); margin-top: 0px; font-size: min(32px,7.8cqi)">아정당이 바꾸기로 했습니다</h2>
     <div style="position:relative;max-width:520px;margin:28px auto 0;border-radius:20px;overflow:hidden">
       <img src="assets/ceo-portrait.png" alt="아정당 상조 오병선 대표" style="display:block;width:100%;height:auto">
       <div style="position:absolute;right:16px;bottom:16px;padding:12px 18px;border-radius:12px;background:rgba(15,18,22,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);text-align:right">
@@ -699,7 +699,7 @@
   </section>
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">싸다고&nbsp;품질이 떨어지지 않습니다</h3>
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6cqi)/1.45 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Primary)">싸다고&nbsp;품질이 떨어지지 않습니다</h3>
     <p style="margin:18px 0 0;font:var(--Font-Weight-Medium) clamp(15px,3cqi,19px)/1.7 var(--Font-Family-Base);letter-spacing:-0.02em;color:var(--Color-Fg-Secondary);text-wrap:pretty">거품은 걷어내되, 마지막 가시는 길의 격(格)은<br>최고 수준 그대로 지켜드립니다</p>
     <img src="assets/awards-v2.png" alt="2021~2025 대한민국 고객만족지수 1위 상장" style="display:block;width:100%;max-width:760px;height:auto;margin:36px auto 0">
     <div style="display:flex;align-items:center;justify-content:center;gap:clamp(24px,5cqi,56px);max-width:520px;margin:28px auto 0;padding:22px 24px;border-radius:16px;background:var(--Color-GrayScale-050)">
@@ -861,7 +861,7 @@
   
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
-    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(23px,5.1cqi,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">365일 24시간, <span style="color:var(--Color-Primary-600)">전화 한 통이면 됩니다</span></h3>
+    <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.2cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">365일 24시간, <span style="color:var(--Color-Primary-600)">전화 한 통이면 됩니다</span></h3>
     <img src="assets/branch-map.png" alt="전국 지부 지도" style="display:block;width:100%;max-width:420px;height:auto;margin:28px auto 0">
     <p style="margin:24px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">전국 어디서든,<br><span style="color:var(--Color-Primary-600)">가장 가까운 지부 장례지도사 출동</span></p>
     <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:520px;margin:36px auto 0">
@@ -1657,7 +1657,7 @@ class Component extends DCLogic {
         { img: "assets/conv-2.png", name: "입주청소" },
         { img: "assets/conv-1.png", name: "크루즈" }
       ],
-      convCardW: (this.props.viewMode ?? "PC") === "모바일" ? "38%" : "calc((100% - 30px) / 4.3)",
+      convCardW: this.isMob() ? "38%" : "calc((100% - 30px) / 4.3)",
       isVarD: this.state.variant === "d",
       dMoreOpen: !!this.state.dMore,
       dMoreRows: this.state.dMore ? "1fr" : "0fr",
