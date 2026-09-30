@@ -159,9 +159,14 @@
       <source src="assets/hero-video.mp4" type="video/mp4">
     </video>
     </sc-if>
-    <sc-if value="{{ isHeroB }}" hint-placeholder-val="{{ true }}">
+    <sc-if value="{{ isHeroVidB }}" hint-placeholder-val="{{ true }}">
     <video ref="{{ videoRef }}" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%">
-      <source src="assets/hero-video-v4.mp4" type="video/mp4">
+      <source src="assets/hero-video-v4b.mp4" type="video/mp4">
+    </video>
+    </sc-if>
+    <sc-if value="{{ isHeroVidC }}" hint-placeholder-val="{{ false }}">
+    <video ref="{{ videoRef }}" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%">
+      <source src="assets/hero-video-v4c.mp4" type="video/mp4">
     </video>
     </sc-if>
     <sc-if value="{{ isHeroA }}" hint-placeholder-val="{{ false }}">
@@ -460,7 +465,7 @@
         <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) clamp(22px,6vw,34px)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em"><span style="display:block;white-space:nowrap">단 돈 <span style="color:var(--Color-Primary-600)">100원</span>만 내도</span><span style="display:block;white-space:nowrap;margin-top:6px"><span style="display:inline-block;padding:0 0.22em;margin-right:0.18em;background:var(--Color-Primary-600);color:var(--Color-GrayScale-White);line-height:1.3">15만 원 상당</span>선물을 드려요</span></h2>
       </sc-if>
       <sc-if value="{{ cIsCombo }}" hint-placeholder-val="{{ false }}">
-        <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="display:inline-block;padding:0 0.22em;margin-right:0;background:var(--Color-Primary-600);color:var(--Color-GrayScale-White);line-height:1.3">최대 100만 원</span>을 드려요</h2>
+        <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color: var(--Color-Primary-600);">최대 100만 원</span>을 드려요</h2>
       </sc-if>
     </div>
   </section>
@@ -540,10 +545,10 @@
 
   <div data-no-fit="1" style="padding:clamp(24px,4cqi,36px) 24px 0;text-align:center">
     <sc-if value="{{ cIsPure }}" hint-placeholder-val="{{ true }}">
-      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6.6cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">월 100원 내고<br><span style="color: var(--Color-Primary-600);">15만 원 화장품</span> 받아가세요</h2>
+      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">월 100원 내고<br><span style="color: var(--Color-Primary-600);">15만 원 화장품</span> 받아가세요</h2>
     </sc-if>
     <sc-if value="{{ cIsCombo }}" hint-placeholder-val="{{ false }}">
-      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,6.6cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color: var(--Color-Primary-600);">최대 100만 원</span> 받아가세요</h2>
+      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,7.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em;white-space:nowrap;color:var(--Color-Fg-Primary)">현금 사은품<br><span style="color: var(--Color-Primary-600);">최대 100만 원</span> 받아가세요</h2>
     </sc-if>
   </div>
 
@@ -1417,7 +1422,7 @@ const CONSENTS = [
 ];
 
 class Component extends DCLogic {
-  state = { cat: "정수기", line: 0, band: 0, bandOpen: true, plan: "combo", faqOpen: -1, interest: -1, showFloatingCta: false, modal: null, calcIdx: 0, svcIdx: 2, variant: (() => { try { const v = (new URLSearchParams(location.search).get("v") || "a").toLowerCase(); return ["a","b","c","d"].includes(v) ? v : "a"; } catch (e) { return "a"; } })(), heroVid: (() => { try { const h = (new URLSearchParams(location.search).get("hv") || "b").toLowerCase(); return ["a","b"].includes(h) ? h : "b"; } catch (e) { return "b"; } })() };
+  state = { cat: "정수기", line: 0, band: 0, bandOpen: true, plan: "combo", faqOpen: -1, interest: -1, showFloatingCta: false, modal: null, calcIdx: 0, svcIdx: 2, variant: (() => { try { const v = (new URLSearchParams(location.search).get("v") || "a").toLowerCase(); return ["a","b","c","d"].includes(v) ? v : "a"; } catch (e) { return "a"; } })() };
   video = React.createRef();
   componentDidMount() {
     const tryPlay = () => {
@@ -1605,6 +1610,15 @@ class Component extends DCLogic {
     const cat = this.state.cat;
     return {
       videoRef: this.video,
+      isHeroA: (this.state.heroVar || "b") === "a",
+      isHeroB: (this.state.heroVar || "b") !== "a",
+      isHeroVidB: (this.state.heroVar || "b") === "b",
+      isHeroVidC: this.state.heroVar === "c",
+      heroBg: (this.state.heroVar || "b") === "a" ? "#080f24" : "#FFFFFF",
+      heroTabs: [["a", "A · 기존 영상"], ["b", "B · 새 영상"], ["c", "C · 새 영상"]].map(([k, label]) => {
+        const on = (this.state.heroVar || "b") === k;
+        return { label, bg: on ? "var(--Color-GrayScale-900)" : "transparent", fg: on ? "var(--Color-GrayScale-White)" : "var(--Color-Fg-Secondary)", onClick: () => this.setState({ heroVar: k }, () => { const v = this.video && this.video.current; if (v) { v.load(); v.play && v.play().catch(() => {}); } }) };
+      }),
       selectCombo: () => this.setState({ plan: "combo" }),
       selectPure: () => this.setState({ plan: "pure" }),
       comboTabBg: this.state.plan === "combo" ? "linear-gradient(105deg,#0B0B0C 0%,#14203A 52%,#1B3E8C 100%)" : "transparent",
@@ -1688,7 +1702,7 @@ class Component extends DCLogic {
         { img: "assets/conv-2.png", name: "입주청소" },
         { img: "assets/conv-1.png", name: "크루즈" }
       ],
-      convCardW: this.isMob() ? "38%" : "calc((100% - 30px) / 4.3)",
+      convCardW: (this.props.viewMode ?? "PC") === "모바일" ? "38%" : "calc((100% - 30px) / 4.3)",
       isVarD: this.state.variant === "d",
       dMoreOpen: !!this.state.dMore,
       dMoreRows: this.state.dMore ? "1fr" : "0fr",
@@ -1704,20 +1718,6 @@ class Component extends DCLogic {
       cComboBg: this.state.cPlan === "combo" ? "linear-gradient(105deg,#0B0B0C 0%,#14203A 52%,#1B3E8C 100%)" : "transparent",
       cComboFg: this.state.cPlan === "combo" ? "#fff" : "#9AA1A9",
       cComboShadow: this.state.cPlan === "combo" ? "inset 0 1px 0 rgba(255,255,255,.22),0 6px 16px rgba(15,18,22,.28)" : "none",
-      heroBg: this.state.heroVid === "a" ? "#080f24" : "#FFFFFF",
-      isHeroA: this.state.heroVid === "a",
-      isHeroB: this.state.heroVid !== "a",
-      heroTabs: [["a","영상 A안 · 기존"],["b","영상 B안 · 신규"]].map(([k, label]) => ({
-        label,
-        bg: (this.state.heroVid === k || (k === "b" && this.state.heroVid !== "a")) ? "var(--Color-GrayScale-900)" : "transparent",
-        fg: (this.state.heroVid === k || (k === "b" && this.state.heroVid !== "a")) ? "var(--Color-GrayScale-White)" : "var(--Color-Fg-Secondary)",
-        onClick: () => {
-          this.setState({ heroVid: k });
-          try { const u = new URL(location.href); u.searchParams.set("hv", k); history.replaceState(null, "", u); } catch (e) {}
-          /* 엘리먼트가 교체되므로 새 video 에 다시 재생을 걸어준다. */
-          setTimeout(() => { if (this.resumeVideo) this.resumeVideo(); }, 60);
-        }
-      })),
       varTabs: [["a","A안 · 기존"],["b","B안 · 수정"],["c","C안 · 수정"],["d","D안 · 수정"]].map(([k, label]) => ({
         label,
         bg: this.state.variant === k ? "var(--Color-GrayScale-900)" : "transparent",
