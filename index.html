@@ -182,18 +182,21 @@
     </div>
   </section>
 
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin:14px 0 0;padding:0 8px">
+    <span style="font:var(--Font-Weight-SemiBold) 12px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">헤더 영상</span>
+    <div style="display:flex;gap:4px;padding:4px;border-radius:9999px;background:var(--Color-GrayScale-050);max-width:100%;overflow-x:auto;box-sizing:border-box">
+      <sc-for list="{{ heroTabs }}" as="h" hint-placeholder-count="2">
+        <button onClick="{{ h.onClick }}" style="flex:0 0 auto;white-space:nowrap;border:0;cursor:pointer;height:36px;padding:{{ varTabPad }};border-radius:9999px;font:var(--Font-Weight-Bold) {{ varTabFs }}/1 var(--Font-Family-Base);transition:background 120ms ease,color 120ms ease;background:{{ h.bg }};color:{{ h.fg }}">{{ h.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
   <div style="max-width:840px;margin:clamp(24px,4cqi,40px) auto 0;padding:16px 0 28px;border:1.5px dashed var(--Color-Border-Primary);border-radius:20px;box-sizing:border-box;width:{{ varWrapW }}">
   <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 8px">
     <span style="font:var(--Font-Weight-SemiBold) 12px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">시안 비교 · 피드백용</span>
     <div style="display:flex;gap:4px;padding:4px;border-radius:9999px;background:var(--Color-GrayScale-050);max-width:100%;overflow-x:auto;box-sizing:border-box">
       <sc-for list="{{ varTabs }}" as="t" hint-placeholder-count="3">
         <button onClick="{{ t.onClick }}" style="flex:0 0 auto;white-space:nowrap;border:0;cursor:pointer;height:36px;padding:{{ varTabPad }};border-radius:9999px;font:var(--Font-Weight-Bold) {{ varTabFs }}/1 var(--Font-Family-Base);transition:background 120ms ease,color 120ms ease;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</button>
-      </sc-for>
-    </div>
-    <span style="margin-top:6px;font:var(--Font-Weight-SemiBold) 12px/1.4 var(--Font-Family-Base);color:var(--Color-Fg-Tertiary)">헤더 영상</span>
-    <div style="display:flex;gap:4px;padding:4px;border-radius:9999px;background:var(--Color-GrayScale-050);max-width:100%;overflow-x:auto;box-sizing:border-box">
-      <sc-for list="{{ heroTabs }}" as="h" hint-placeholder-count="2">
-        <button onClick="{{ h.onClick }}" style="flex:0 0 auto;white-space:nowrap;border:0;cursor:pointer;height:36px;padding:{{ varTabPad }};border-radius:9999px;font:var(--Font-Weight-Bold) {{ varTabFs }}/1 var(--Font-Family-Base);transition:background 120ms ease,color 120ms ease;background:{{ h.bg }};color:{{ h.fg }}">{{ h.label }}</button>
       </sc-for>
     </div>
   </div>
