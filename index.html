@@ -1423,7 +1423,7 @@ const CONSENTS = [
 ];
 
 class Component extends DCLogic {
-  state = { cat: "정수기", line: 0, band: 0, bandOpen: true, plan: "combo", faqOpen: -1, interest: -1, showFloatingCta: false, modal: null, calcIdx: 0, svcIdx: 2, variant: (() => { try { const v = (new URLSearchParams(location.search).get("v") || "a").toLowerCase(); return ["a","b","c","d"].includes(v) ? v : "a"; } catch (e) { return "a"; } })() };
+  state = { cat: "정수기", line: 0, band: 0, bandOpen: true, plan: "combo", faqOpen: -1, interest: -1, showFloatingCta: false, modal: null, calcIdx: 0, svcIdx: 2, variant: (() => { try { const v = (new URLSearchParams(location.search).get("v") || "a").toLowerCase(); return ["a","b","c","d"].includes(v) ? v : "a"; } catch (e) { return "a"; } })(), heroVar: (() => { try { const h = (new URLSearchParams(location.search).get("hv") || "b").toLowerCase(); return ["a","b","c"].includes(h) ? h : "b"; } catch (e) { return "b"; } })() };
   video = React.createRef();
   componentDidMount() {
     const tryPlay = () => {
@@ -1618,7 +1618,7 @@ class Component extends DCLogic {
       heroBg: (this.state.heroVar || "b") === "a" ? "#080f24" : "#FFFFFF",
       heroTabs: [["a", "A · 기존 영상"], ["b", "B · 새 영상"], ["c", "C · 새 영상"]].map(([k, label]) => {
         const on = (this.state.heroVar || "b") === k;
-        return { label, bg: on ? "var(--Color-GrayScale-900)" : "transparent", fg: on ? "var(--Color-GrayScale-White)" : "var(--Color-Fg-Secondary)", onClick: () => this.setState({ heroVar: k }, () => { const v = this.video && this.video.current; if (v) { v.load(); v.play && v.play().catch(() => {}); } }) };
+        return { label, bg: on ? "var(--Color-GrayScale-900)" : "transparent", fg: on ? "var(--Color-GrayScale-White)" : "var(--Color-Fg-Secondary)", onClick: () => this.setState({ heroVar: k }, () => { try { const u = new URL(location.href); u.searchParams.set("hv", k); history.replaceState(null, "", u); } catch (e) {} const v = this.video && this.video.current; if (v) { v.load(); v.play && v.play().catch(() => {}); } }) };
       }),
       selectCombo: () => this.setState({ plan: "combo" }),
       selectPure: () => this.setState({ plan: "pure" }),
@@ -1703,7 +1703,7 @@ class Component extends DCLogic {
         { img: "assets/conv-2.png", name: "입주청소" },
         { img: "assets/conv-1.png", name: "크루즈" }
       ],
-      convCardW: (this.props.viewMode ?? "PC") === "모바일" ? "38%" : "calc((100% - 30px) / 4.3)",
+      convCardW: this.isMob() ? "38%" : "calc((100% - 30px) / 4.3)",
       isVarD: this.state.variant === "d",
       dMoreOpen: !!this.state.dMore,
       dMoreRows: this.state.dMore ? "1fr" : "0fr",
