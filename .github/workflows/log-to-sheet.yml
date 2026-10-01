@@ -1,0 +1,40 @@
+# 내 GitHub 저장소용: Vercel 배포가 성공하면 시트에 기록
+# 저장 위치: 저장소의 .github/workflows/log-to-sheet.yml
+#
+# 저장소 Settings → Secrets and variables → Actions 에서 등록:
+#   Secrets   : SHEET_URL    (Apps Script 웹앱 주소)
+#               SHEET_SECRET (Code.gs의 SECRET과 같은 값)
+#   Variables : PROD_URL     (예: https://ajd-contents.vercel.app/)
+
+name: 시트에 배포 기록
+
+on: deployment_status
+
+jobs:
+  log:
+    # Vercel이 보내는 '운영(Production)' 배포 성공일 때만 실행
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      startsWith(github.event.deployment.environment, 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 시트로 보내기
+        env:
+          SHEET_URL: ${{ secrets.SHEET_URL }}
+          SHEET_SECRET: ${{ secrets.SHEET_SECRET }}
+          PROD_URL: ${{ vars.PROD_URL }}
+          REPO: ${{ github.event.repository.name }}
+          SHA: ${{ github.event.deployment.sha }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          jq -n \
+            --arg secret "$SHEET_SECRET" \
+            --arg url "$PROD_URL" \
+            --arg slug "$REPO" \
+            --arg sha "$SHA" \
+            --arg actor "$ACTOR" \
+            '{secret:$secret, mode:"single", source:"github", publisher:$actor,
+              items:[{url:$url, slug:$slug, title:$slug, version:$sha}]}' \
+          | curl -sSL --data @- -H 'Content-Type: application/json' "$SHEET_URL"
+          # 주의: -X POST를 붙이지 마세요. Apps Script가 응답을 다른 주소로 넘기는데,
+          # -X POST가 있으면 넘어간 주소에도 POST를 보내서 실패합니다.
