@@ -1694,12 +1694,12 @@ class Component extends DCLogic {
         { no: "01", title: "임종 직후", items: ["장례식장 섭외", "고인 이송", "필요 부수 안내", "안치"], hl: 0 },
         { no: "02", title: "1일차", items: ["빈소 차림", "부고 알림", "화장장 예약", "조문객 식사"] },
         { no: "03", title: "2일차", items: ["염습·입관", "상복 대여", "조문 답례품", "종교별 의식 연계"] },
-        { no: "04", title: "3일차", items: ["발인", "리무진·버스 운구", "봉안당·수목장 안치", "부의금·명단 정리"] },
-        { no: "05", title: "장례 후", items: ["사망신고·행정 지원", "49재·첫 기일 알림", "유품정리 업체 연계", "안심상속 서비스"] }
+        { no: "04", title: "3일차", items: ["발인", "리무진·버스 운구", "봉안당·수목장 안치", "부의금·명단 정리"], m: "발인 · 운구 · 봉안·수목장 안치 · 부의금 정리" },
+        { no: "05", title: "장례 후", items: ["사망신고·행정 지원", "49재·첫 기일 알림", "유품정리 업체 연계", "안심상속 서비스"], m: "행정 지원 · 49재 알림 · 유품정리 · 안심상속" }
       ].map((c, i) => {
         const on = i === (this.state.careActive || 0);
         const mob = this.isMob();
-        return { no: c.no, title: c.title, pad: mob ? "11px 14px" : "24px 20px", gap: mob ? "2px" : "16px", radius: mob ? "12px" : "16px", dotDisp: mob ? "block" : "none", dotTop: mob ? "15px" : "19px", noFont: mob ? "15px/22px" : "13px/20px", noColor: mob ? (on ? "#145CE6" : "#1F2429") : "#145CE6", line: c.items.join(" · "), lineDisp: mob ? "block" : "none", listDisp: mob ? "none" : "flex", dotBg: on ? "#145CE6" : "#FFFFFF", dotBorder: on ? "#145CE6" : "#C4CAD0", headDir: mob ? "row" : "column", headGap: mob ? "5px" : "2px", titleFont: mob ? "15px/22px" : "20px/28px", divDisp: mob ? "none" : "block", border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
+        return { no: c.no, title: c.title, pad: mob ? "11px 14px" : "24px 20px", gap: mob ? "2px" : "16px", radius: mob ? "12px" : "16px", dotDisp: mob ? "block" : "none", dotTop: mob ? "15px" : "19px", noFont: mob ? "15px/22px" : "13px/20px", noColor: mob ? (on ? "#145CE6" : "#1F2429") : "#145CE6", line: (mob && c.m) || c.items.join(" · "), lineDisp: mob ? "block" : "none", listDisp: mob ? "none" : "flex", dotBg: on ? "#145CE6" : "#FFFFFF", dotBorder: on ? "#145CE6" : "#C4CAD0", headDir: mob ? "row" : "column", headGap: mob ? "5px" : "2px", titleFont: mob ? "15px/22px" : "20px/28px", divDisp: mob ? "none" : "block", border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
       }),
       funeralSteps: [
         { no: "01", name: "장례식장 예약", desc: "특실·일반실, 음식 인원 협의" },
