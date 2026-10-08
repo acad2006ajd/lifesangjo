@@ -830,16 +830,17 @@
 가족은 배웅에만 마음 쓰세요</p>
     </div>
     <div data-no-fit="1" style="position:relative;display:grid;grid-template-columns:{{ careCols }};gap:{{ careGap }};align-items:stretch;max-width:1024px;margin:{{ careTop }} auto 0;padding-left:{{ carePadL }};text-align:left">
-      <div aria-hidden="true" style="display:{{ careLineDisp }};position:absolute;left:7px;top:26px;bottom:26px;width:2px;background:#DEE2E6"></div>
+      <div aria-hidden="true" style="display:{{ careLineDisp }};position:absolute;left:7px;top:22px;bottom:22px;width:2px;background:#DEE2E6"></div>
       <sc-for list="{{ careSteps }}" as="c" hint-placeholder-count="5">
-        <div style="position:relative;border:{{ c.border }};box-shadow:{{ c.shadow }};border-radius:16px;padding:{{ c.pad }};display:flex;flex-direction:column;gap:{{ c.gap }};background:#FFFFFF;box-sizing:border-box;transition:border-color 400ms ease,box-shadow 400ms ease">
-          <div aria-hidden="true" style="display:{{ c.dotDisp }};position:absolute;left:-28px;top:19px;width:10px;height:10px;border-radius:50%;background:{{ c.dotBg }};border:2px solid {{ c.dotBorder }};transition:background 400ms ease,border-color 400ms ease"></div>
+        <div style="position:relative;border:{{ c.border }};box-shadow:{{ c.shadow }};border-radius:{{ c.radius }};padding:{{ c.pad }};display:flex;flex-direction:column;gap:{{ c.gap }};background:#FFFFFF;box-sizing:border-box;transition:border-color 400ms ease,box-shadow 400ms ease">
+          <div aria-hidden="true" style="display:{{ c.dotDisp }};position:absolute;left:-28px;top:{{ c.dotTop }};width:10px;height:10px;border-radius:50%;background:{{ c.dotBg }};border:2px solid {{ c.dotBorder }};transition:background 400ms ease,border-color 400ms ease"></div>
           <div style="display:flex;flex-direction:{{ c.headDir }};align-items:baseline;gap:{{ c.headGap }}">
-            <div style="font:var(--Font-Weight-Bold) 13px/20px var(--Font-Family-Base);color:#145CE6">{{ c.no }}</div>
+            <div style="font:var(--Font-Weight-Bold) {{ c.noFont }} var(--Font-Family-Base);color:{{ c.noColor }};transition:color 400ms ease">{{ c.no }}</div>
             <div style="font:var(--Font-Weight-Bold) {{ c.titleFont }} var(--Font-Family-Base);color:{{ c.titleColor }};transition:color 400ms ease">{{ c.title }}</div>
           </div>
           <div style="display:{{ c.divDisp }};height:1px;background:#DEE2E6"></div>
-          <div style="display:flex;flex-direction:{{ c.itemDir }};flex-wrap:wrap;gap:{{ c.itemGap }};font:var(--Font-Weight-Regular) {{ c.itemFont }} var(--Font-Family-Base);color:#1F2429">
+          <div style="display:{{ c.lineDisp }};font:var(--Font-Weight-Regular) 13px/20px var(--Font-Family-Base);letter-spacing:-0.02em;word-break:keep-all;color:#575E64">{{ c.line }}</div>
+          <div style="display:{{ c.listDisp }};flex-direction:column;gap:10px;font:var(--Font-Weight-Regular) 15px/24px var(--Font-Family-Base);color:#1F2429">
             <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="3">
               <div style="display:flex;gap:8px;align-items:flex-start;color:{{ it.color }};font-weight:{{ it.weight }};transition:color 400ms ease"><svg style="flex:0 0 16px;margin-top:4px" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#145CE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><span>{{ it.label }}</span></div>
             </sc-for>
@@ -1685,7 +1686,7 @@ class Component extends DCLogic {
         };
       }),
       careCols: this.isMob() ? "minmax(0,1fr)" : "repeat(5,minmax(0,1fr))",
-      careGap: this.isMob() ? "10px" : "12px",
+      careGap: this.isMob() ? "8px" : "12px",
       careTop: this.isMob() ? "32px" : "48px",
       carePadL: this.isMob() ? "28px" : "0",
       careLineDisp: this.isMob() ? "block" : "none",
@@ -1698,7 +1699,7 @@ class Component extends DCLogic {
       ].map((c, i) => {
         const on = i === (this.state.careActive || 0);
         const mob = this.isMob();
-        return { no: c.no, title: c.title, pad: mob ? "14px 16px" : "24px 20px", gap: mob ? "8px" : "16px", dotDisp: mob ? "block" : "none", dotBg: on ? "#145CE6" : "#FFFFFF", dotBorder: on ? "#145CE6" : "#C4CAD0", headDir: mob ? "row" : "column", headGap: mob ? "8px" : "2px", titleFont: mob ? "17px/24px" : "20px/28px", divDisp: mob ? "none" : "block", itemDir: mob ? "row" : "column", itemGap: mob ? "4px 12px" : "10px", itemFont: mob ? "14px/22px" : "15px/24px", border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
+        return { no: c.no, title: c.title, pad: mob ? "11px 14px" : "24px 20px", gap: mob ? "2px" : "16px", radius: mob ? "12px" : "16px", dotDisp: mob ? "block" : "none", dotTop: mob ? "15px" : "19px", noFont: mob ? "15px/22px" : "13px/20px", noColor: mob ? (on ? "#145CE6" : "#1F2429") : "#145CE6", line: c.items.join(" · "), lineDisp: mob ? "block" : "none", listDisp: mob ? "none" : "flex", dotBg: on ? "#145CE6" : "#FFFFFF", dotBorder: on ? "#145CE6" : "#C4CAD0", headDir: mob ? "row" : "column", headGap: mob ? "5px" : "2px", titleFont: mob ? "15px/22px" : "20px/28px", divDisp: mob ? "none" : "block", border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
       }),
       funeralSteps: [
         { no: "01", name: "장례식장 예약", desc: "특실·일반실, 음식 인원 협의" },
