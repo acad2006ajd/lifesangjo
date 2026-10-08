@@ -829,15 +829,17 @@
       <p style="margin:0;font:var(--Font-Weight-Regular) clamp(15px,3cqi,19px)/1.58 var(--Font-Family-Base);color:#575E64">임종 직후부터 장례 후까지,<br>
 가족은 배웅에만 마음 쓰세요</p>
     </div>
-    <div data-no-fit="1" style="display:grid;grid-template-columns:{{ careCols }};gap:12px;align-items:stretch;max-width:1024px;margin:48px auto 0;text-align:left">
+    <div data-no-fit="1" style="position:relative;display:grid;grid-template-columns:{{ careCols }};gap:{{ careGap }};align-items:stretch;max-width:1024px;margin:{{ careTop }} auto 0;padding-left:{{ carePadL }};text-align:left">
+      <div aria-hidden="true" style="display:{{ careLineDisp }};position:absolute;left:7px;top:26px;bottom:26px;width:2px;background:#DEE2E6"></div>
       <sc-for list="{{ careSteps }}" as="c" hint-placeholder-count="5">
-        <div style="border:{{ c.border }};box-shadow:{{ c.shadow }};border-radius:16px;padding:24px 20px;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;box-sizing:border-box;transition:border-color 400ms ease,box-shadow 400ms ease">
-          <div style="display:flex;flex-direction:column;gap:2px">
+        <div style="position:relative;border:{{ c.border }};box-shadow:{{ c.shadow }};border-radius:16px;padding:{{ c.pad }};display:flex;flex-direction:column;gap:{{ c.gap }};background:#FFFFFF;box-sizing:border-box;transition:border-color 400ms ease,box-shadow 400ms ease">
+          <div aria-hidden="true" style="display:{{ c.dotDisp }};position:absolute;left:-28px;top:19px;width:10px;height:10px;border-radius:50%;background:{{ c.dotBg }};border:2px solid {{ c.dotBorder }};transition:background 400ms ease,border-color 400ms ease"></div>
+          <div style="display:flex;flex-direction:{{ c.headDir }};align-items:baseline;gap:{{ c.headGap }}">
             <div style="font:var(--Font-Weight-Bold) 13px/20px var(--Font-Family-Base);color:#145CE6">{{ c.no }}</div>
-            <div style="font:var(--Font-Weight-Bold) 20px/28px var(--Font-Family-Base);color:{{ c.titleColor }};transition:color 400ms ease">{{ c.title }}</div>
+            <div style="font:var(--Font-Weight-Bold) {{ c.titleFont }} var(--Font-Family-Base);color:{{ c.titleColor }};transition:color 400ms ease">{{ c.title }}</div>
           </div>
-          <div style="height:1px;background:#DEE2E6"></div>
-          <div style="display:flex;flex-direction:column;gap:10px;font:var(--Font-Weight-Regular) 15px/24px var(--Font-Family-Base);color:#1F2429">
+          <div style="display:{{ c.divDisp }};height:1px;background:#DEE2E6"></div>
+          <div style="display:flex;flex-direction:{{ c.itemDir }};flex-wrap:wrap;gap:{{ c.itemGap }};font:var(--Font-Weight-Regular) {{ c.itemFont }} var(--Font-Family-Base);color:#1F2429">
             <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="3">
               <div style="display:flex;gap:8px;align-items:flex-start;color:{{ it.color }};font-weight:{{ it.weight }};transition:color 400ms ease"><svg style="flex:0 0 16px;margin-top:4px" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#145CE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg><span>{{ it.label }}</span></div>
             </sc-for>
@@ -1682,7 +1684,11 @@ class Component extends DCLogic {
           bodyMaxHeight: open ? "240px" : "0px"
         };
       }),
-      careCols: this.isMob() ? "repeat(2,minmax(0,1fr))" : "repeat(5,minmax(0,1fr))",
+      careCols: this.isMob() ? "minmax(0,1fr)" : "repeat(5,minmax(0,1fr))",
+      careGap: this.isMob() ? "10px" : "12px",
+      careTop: this.isMob() ? "32px" : "48px",
+      carePadL: this.isMob() ? "28px" : "0",
+      careLineDisp: this.isMob() ? "block" : "none",
       careSteps: [
         { no: "01", title: "임종 직후", items: ["장례식장 섭외", "고인 이송", "필요 부수 안내", "안치"], hl: 0 },
         { no: "02", title: "1일차", items: ["빈소 차림", "부고 알림", "화장장 예약", "조문객 식사"] },
@@ -1691,7 +1697,8 @@ class Component extends DCLogic {
         { no: "05", title: "장례 후", items: ["사망신고·행정 지원", "49재·첫 기일 알림", "유품정리 업체 연계", "안심상속 서비스"] }
       ].map((c, i) => {
         const on = i === (this.state.careActive || 0);
-        return { no: c.no, title: c.title, border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
+        const mob = this.isMob();
+        return { no: c.no, title: c.title, pad: mob ? "14px 16px" : "24px 20px", gap: mob ? "8px" : "16px", dotDisp: mob ? "block" : "none", dotBg: on ? "#145CE6" : "#FFFFFF", dotBorder: on ? "#145CE6" : "#C4CAD0", headDir: mob ? "row" : "column", headGap: mob ? "8px" : "2px", titleFont: mob ? "17px/24px" : "20px/28px", divDisp: mob ? "none" : "block", itemDir: mob ? "row" : "column", itemGap: mob ? "4px 12px" : "10px", itemFont: mob ? "14px/22px" : "15px/24px", border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
       }),
       funeralSteps: [
         { no: "01", name: "장례식장 예약", desc: "특실·일반실, 음식 인원 협의" },
