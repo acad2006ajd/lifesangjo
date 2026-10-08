@@ -825,8 +825,9 @@
 
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
     <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
-      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(40px,6cqi)/1.2 var(--Font-Family-Base);letter-spacing:-0.02em;color:#1F2429">복잡한 장례 절차<br><span style="color: rgb(20, 92, 230);">아정당</span>이 대신하겠습니다</h2>
-      <p style="margin:0;font:var(--Font-Weight-Regular) clamp(15px,3cqi,19px)/1.58 var(--Font-Family-Base);color:#575E64">다시 오지 않을 마지막 시간,<br>유가족은 고인 곁만 지키세요</p>
+      <h2 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(40px,6cqi)/1.2 var(--Font-Family-Base);letter-spacing:-0.02em;color:#1F2429">경황없는 그 순간<br><span style="color: rgb(20, 92, 230);">아정당</span><span style="letter-spacing: -0.02em;">이 모든 걸 대신합니다</span></h2>
+      <p style="margin:0;font:var(--Font-Weight-Regular) clamp(15px,3cqi,19px)/1.58 var(--Font-Family-Base);color:#575E64">임종 직후부터 장례 후까지,<br>
+가족은 배웅에만 마음 쓰세요</p>
     </div>
     <div data-no-fit="1" style="display:grid;grid-template-columns:{{ careCols }};gap:12px;align-items:stretch;max-width:1024px;margin:48px auto 0;text-align:left">
       <sc-for list="{{ careSteps }}" as="c" hint-placeholder-count="5">
@@ -906,7 +907,7 @@
   <section style="padding:clamp(48px,11cqi,140px) 24px 0;text-align:center">
     <h3 data-hm-skip="1" style="margin:0;font:var(--Font-Weight-Bold) min(34px,5.4cqi)/1.4 var(--Font-Family-Base);letter-spacing:-0.02em">365일 24시간,<br><span style="color:var(--Color-Primary-600)">전화 한 통이면 됩니다</span></h3>
     <img src="assets/branch-map.png" alt="전국 지부 지도" style="display:block;width:100%;max-width:420px;height:auto;margin:28px auto 0">
-    <p style="margin:24px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">전국 어디서든,<br><span style="color:var(--Color-Primary-600)">가장 가까운 지부 장례지도사 출동</span></p>
+    <p style="margin:24px 0 0;font:var(--Font-Weight-Bold) clamp(17px,3.2cqi,20px)/1.6 var(--Font-Family-Base);letter-spacing:-0.02em">새벽, 명절, 처음 겪는 상황에도<br>전국 어디든 장례 준비가 가능합니다</p>
     <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:520px;margin:36px auto 0">
       <a href="tel:1833-7377" style="display: flex; align-items: center; justify-content: center; height: 56px; text-align: center; background: var(--Color-Primary-600); color: var(--Color-GrayScale-White); font: var(--Font-Weight-Bold) 16px/1.3 var(--Font-Family-Base); border: 1px solid var(--Color-Primary-600); border-radius: 12px; word-break: keep-all">긴급 장례 전화 상담 ›</a>
       <a href="#apply" style="display:flex;align-items:center;justify-content:center;height:56px;text-align:center;background:var(--Color-GrayScale-White);border:1px solid var(--Color-Primary-600);color:var(--Color-Primary-600);font:var(--Font-Weight-Bold) 16px/1.3 var(--Font-Family-Base);border-radius:12px;word-break:keep-all">우리 지역 장례식장 찾아보기 ›</a>
@@ -1683,11 +1684,11 @@ class Component extends DCLogic {
       }),
       careCols: this.isMob() ? "repeat(2,minmax(0,1fr))" : "repeat(5,minmax(0,1fr))",
       careSteps: [
-        { no: "01", title: "임종 직후", items: ["장례식장 찾아 예약", "고인 이송", "안치"], hl: 0 },
+        { no: "01", title: "임종 직후", items: ["장례식장 섭외", "고인 이송", "필요 부수 안내", "안치"], hl: 0 },
         { no: "02", title: "1일차", items: ["빈소 차림", "부고 알림", "화장장 예약", "조문객 식사"] },
-        { no: "03", title: "2일차", items: ["염습·입관", "조문 답례품"] },
-        { no: "04", title: "3일차", items: ["발인", "리무진·버스 운구", "화장", "봉안당·수목장 안치"] },
-        { no: "05", title: "장례 후", items: ["사망신고·행정 지원", "기일 알림"] }
+        { no: "03", title: "2일차", items: ["염습·입관", "상복 대여", "조문 답례품", "종교별 의식 연계"] },
+        { no: "04", title: "3일차", items: ["발인", "리무진·버스 운구", "봉안당·수목장 안치", "부의금·명단 정리"] },
+        { no: "05", title: "장례 후", items: ["사망신고·행정 지원", "49재·첫 기일 알림", "유품정리 업체 연계", "안심상속 서비스"] }
       ].map((c, i) => {
         const on = i === (this.state.careActive || 0);
         return { no: c.no, title: c.title, border: on ? "1px solid #145CE6" : "1px solid #DEE2E6", shadow: on ? "inset 0 0 0 1px #145CE6" : "inset 0 0 0 1px transparent", titleColor: on ? "#145CE6" : "#1F2429", items: c.items.map((label) => ({ label, color: on ? "#145CE6" : "#1F2429", weight: on ? 700 : 400 })) };
